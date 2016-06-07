@@ -1,6 +1,9 @@
 
 package View;
 
+import BC.MoradorBC;
+import Model.Enum.TipoMorador;
+import Model.Morador;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +30,24 @@ public class PrincipalServlet extends HttpServlet {
    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        Morador morador;
+        morador = new Morador(request.getParameter("login"),request.getParameter("senha"));
+        RequestDispatcher rd;
+        if(MoradorBC.getInstance().verificaLogin(morador)){
+            request.getSession().setAttribute("morador", morador);
+            if(morador.getTipoMorador() == TipoMorador.CONDOMINO){
+                rd = request.getRequestDispatcher("painel-condomino.jsp");    
+            }else {
+                rd = request.getRequestDispatcher("painel-sindico.jsp");
+            }
+            
+            rd.forward(request, response);
+        }else {
+            rd = request.getRequestDispatcher("Inicio.jsp");
+            rd.forward(request, response);
+        }
+        
         
     }
 

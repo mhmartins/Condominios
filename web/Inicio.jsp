@@ -12,22 +12,24 @@
         <title>Login</title>
     </head>
     <body>
-        
-        <form action="Principal" method="POST">
+        <center>
+            <form action="Principal" method="POST">
             <table>
                 <tr>
                     <td>Login:</td>
-                    <td><input type="text" /> </td>
+                    <td><input type="text" name="login" id="login" /> </td>
                 </tr>
                 <tr>
                     <td>Senha</td>
-                    <td><input type="password" /> </td>
+                    <td><input type="password" name="senha" id="senha" /> </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Logar" /></td>
+                    <td colspan="2"><input type="submit" value="Logar" /></td>
                 </tr>
             </table>
         </form>
+        </center>
+        
        
     </body>
 </html>
