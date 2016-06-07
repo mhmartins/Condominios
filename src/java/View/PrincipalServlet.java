@@ -16,6 +16,8 @@ public class PrincipalServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        //Comentario
+        
         RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
         rd.forward(request, response);
         
