@@ -16,7 +16,7 @@ public class PrincipalServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/teste.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("teste.jsp");
         rd.forward(request, response);
         
         
