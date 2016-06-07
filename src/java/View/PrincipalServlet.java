@@ -2,7 +2,6 @@
 package View;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,8 @@ public class PrincipalServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("teste.jsp");
+        
+        RequestDispatcher rd = request.getRequestDispatcher("Inicio.jsp");
         rd.forward(request, response);
         
         
@@ -25,7 +25,7 @@ public class PrincipalServlet extends HttpServlet {
    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
     }
 
 
