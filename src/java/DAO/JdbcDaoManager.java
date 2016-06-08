@@ -40,8 +40,8 @@ public class JdbcDaoManager implements IDaoManager{
         try {
             Class.forName("com.mysql.jdbc.Driver");
                 String url;
-                url = "jdbc:mysql://localhost:3306/Condominio";
-                connection = DriverManager.getConnection(url, "root", "root");
+                url = "jdbc:mysql://acesolutions.com.br:3306/aceso538_condominos";
+                connection = DriverManager.getConnection(url, "aceso538_cond", "batata");
                 connection.setAutoCommit(false);
         }catch (ClassNotFoundException e) {
             throw new DaoException("Erro com o conector do JDBC driver");

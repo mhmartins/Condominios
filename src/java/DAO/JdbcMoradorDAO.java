@@ -32,7 +32,7 @@ public class JdbcMoradorDAO implements IMoradorDAO{
     public boolean verificaLogin(Morador morador) {
         
         try {
-            String sql = "SELECT * FROM Moradores WHERE login = ? and senha = ?";
+            String sql = "SELECT * FROM Moradores WHERE Login = ? and Senha = ?";
             PreparedStatement ps;
             ResultSet rs;
             ps = connection.prepareStatement(sql);
@@ -46,17 +46,17 @@ public class JdbcMoradorDAO implements IMoradorDAO{
                 return false;
             }
         } catch (SQLException ex) {
-            throw new DaoException("Erro com o banco de dados, tente novamente");
+            throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
         }
     }
     
     public void populateUsuario(Morador morador, ResultSet rs) throws SQLException{
-        if(TipoMorador.CONDOMINO.getTipo() == rs.getString("tipo").charAt(0) ){
+        if(TipoMorador.CONDOMINO.getTipo() == rs.getString("Tipo").charAt(0) ){
             morador.setTipoMorador(TipoMorador.CONDOMINO);
         }else {
             morador.setTipoMorador(TipoMorador.SINDICO);
         }
-        morador.setNumApt(rs.getInt("apt"));
+        morador.setNumApt(rs.getInt("Apartamento"));
     }
     
     

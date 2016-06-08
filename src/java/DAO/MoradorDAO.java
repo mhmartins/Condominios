@@ -29,7 +29,7 @@ public class MoradorDAO implements IMoradorDAO{
     @Override
     public boolean verificaLogin(Morador morador) {
      
-          IDaoManager iManager;
+        IDaoManager iManager;
         iManager = new JdbcDaoManager();
         iManager.iniciar();
         IMoradorDAO moradorDAO = iManager.getMoradorDAO();
