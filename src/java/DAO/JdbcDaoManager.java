@@ -30,6 +30,7 @@ public class JdbcDaoManager implements IDaoManager{
    
     private Connection connection;
     private JdbcMoradorDAO moradorDAO;
+    private JdbcProdutoDAO produtoDAO;
     
     public JdbcDaoManager(){
         
@@ -49,6 +50,7 @@ public class JdbcDaoManager implements IDaoManager{
             throw new DaoException("Ocorreu um erro com o banco de dados, tente novamente " + e.getMessage());
         }
         moradorDAO = new JdbcMoradorDAO(connection);
+        produtoDAO = new JdbcProdutoDAO(connection);
           
         
     }
@@ -88,6 +90,14 @@ public class JdbcDaoManager implements IDaoManager{
             iniciar();
         }
         return moradorDAO;
+    }
+
+    @Override
+    public JdbcProdutoDAO getProdutoDAO() {
+        if(produtoDAO == null){
+            iniciar();
+        }
+        return produtoDAO;
     }
 
 }

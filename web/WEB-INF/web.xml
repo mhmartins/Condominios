@@ -4,9 +4,33 @@
         <servlet-name>PrincipalServlet</servlet-name>
         <servlet-class>View.PrincipalServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EstoqueServlet</servlet-name>
+        <servlet-class>View.EstoqueServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VisualizarEstoqueServlet</servlet-name>
+        <servlet-class>View.VisualizarEstoqueServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarProdutoServlet</servlet-name>
+        <servlet-class>View.CadastrarProdutoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EstoqueServlet</servlet-name>
+        <url-pattern>/Estoque</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarEstoqueServlet</servlet-name>
+        <url-pattern>/Estoque/Visualizar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarProdutoServlet</servlet-name>
+        <url-pattern>/CadastrarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

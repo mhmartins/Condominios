@@ -20,8 +20,19 @@ public class PrincipalServlet extends HttpServlet {
             throws ServletException, IOException {
         
         //Comentario
+        RequestDispatcher rd;
         
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/Inicio.jsp");
+        Morador morador = (Morador)request.getSession().getAttribute("morador");
+        if(morador != null){
+            if(morador.getTipoMorador() == TipoMorador.CONDOMINO){
+                rd = request.getRequestDispatcher("jsp/painel-condomino.jsp");    
+            }else {
+                rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
+            }
+        }else {
+            rd = request.getRequestDispatcher("jsp/Inicio.jsp");
+        }
+        
         rd.forward(request, response);
         
         
