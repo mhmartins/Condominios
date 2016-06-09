@@ -5,11 +5,17 @@
  */
 package BC;
 
+import DAO.ProdutoDAO;
+import Exception.BcException;
+import Interfaces.IProdutoDAO;
+import Model.Produto;
+import java.util.List;
+
 /**
  *
  * @author desenvolvimento
  */
-public class ProdutoBC {
+public class ProdutoBC implements IProdutoDAO{
     
     private ProdutoBC() {
     }
@@ -22,4 +28,22 @@ public class ProdutoBC {
        }
        return instance;
    }
+
+    @Override
+    public List<Produto> getProdutos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean cadastrarProduto(Produto produto) {
+        if(produto.getNome().trim().equals("") || produto.getNome() == null){
+            throw new BcException("Produto sem nome");
+        }else if (produto.getDescricao().trim().equals("") || produto.getDescricao() == null) {
+            throw new BcException("Produto sem descrição");
+        }else if (produto.getQuantidade() <= 0){
+            throw new BcException("Quantidade inválida");
+        }else {
+            return ProdutoDAO.getInstance().cadastrarProduto(produto);
+        }
+    }
 }

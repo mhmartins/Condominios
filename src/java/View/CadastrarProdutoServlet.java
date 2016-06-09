@@ -5,6 +5,8 @@
  */
 package View;
 
+import BC.ProdutoBC;
+import Model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -33,7 +35,21 @@ public class CadastrarProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        Produto produto;
+        produto = new Produto();
+        produto.setNome(request.getParameter("nome"));
+        produto.setDescricao(request.getParameter("descricao"));
+        produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+        
+        RequestDispatcher rd;
+        
+        if(ProdutoBC.getInstance().cadastrarProduto(produto)){
+            rd  = request.getRequestDispatcher("Estoque");
+        }else {
+            rd = request.getRequestDispatcher("CadastrarProduto");
+        }
+        rd.forward(request, response);
     }
 
 }

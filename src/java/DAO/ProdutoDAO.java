@@ -27,12 +27,22 @@ public class ProdutoDAO implements IProdutoDAO{
         return produtoDAO.getProdutos();
     }
     
- public static ProdutoDAO instance;
-    public static ProdutoDAO getInstance(){
-        if(instance == null){
-            instance = new ProdutoDAO();
-        }
-        return instance;
+    public static ProdutoDAO instance;
+    
+       public static ProdutoDAO getInstance(){
+           if(instance == null){
+               instance = new ProdutoDAO();
+           }
+           return instance;
+       }
+
+    @Override
+    public boolean cadastrarProduto(Produto produto) {
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IProdutoDAO produtoDAO = iManager.getProdutoDAO();
+        return produtoDAO.cadastrarProduto(produto);    
     }
     
     

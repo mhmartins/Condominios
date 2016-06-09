@@ -50,7 +50,7 @@ public class JdbcDaoManager implements IDaoManager{
             throw new DaoException("Ocorreu um erro com o banco de dados, tente novamente " + e.getMessage());
         }
         moradorDAO = new JdbcMoradorDAO(connection);
-        //produtoDAO = new JdbcProdutoDAO(connection);
+        produtoDAO = new JdbcProdutoDAO(connection);
           
         
     }

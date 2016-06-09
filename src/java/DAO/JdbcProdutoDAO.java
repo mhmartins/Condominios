@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +35,7 @@ public class JdbcProdutoDAO implements IProdutoDAO{
     public List<Produto> getProdutos() {
         try {
             List<Produto> produtos;
-            String sql = "SELECT * FROM Produtos";
+            String sql = "SELECT * FROM Produto";
             PreparedStatement ps;
             ResultSet rs;
             ps = connection.prepareStatement(sql);
@@ -57,6 +59,28 @@ public class JdbcProdutoDAO implements IProdutoDAO{
         produto.setDescricao(rs.getString("descricao"));
         produto.setQuantidade(rs.getInt("quantidade"));
         return produto;
+    }
+
+    @Override
+    public boolean cadastrarProduto(Produto produto) {
+        try {
+            PreparedStatement ps;        
+            String sql = "INSERT INTO Produto (nome,descricao,quantidade) VALUES (?,?,?)";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, produto.getNome());
+            ps.setString(2, produto.getDescricao());
+            ps.setInt(3, produto.getQuantidade());
+           
+            if(ps.executeUpdate() == 1){
+                return true;
+            }else {
+                return false;
+            }    
+        } catch (SQLException ex) {
+            throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
+        }
+    
+    
     }
     
 }

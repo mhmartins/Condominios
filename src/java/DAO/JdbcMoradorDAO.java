@@ -32,7 +32,7 @@ public class JdbcMoradorDAO implements IMoradorDAO{
     public boolean verificaLogin(Morador morador) {
         
         try {
-            String sql = "SELECT * FROM Moradores WHERE Login = ? and Senha = ?";
+            String sql = "SELECT * FROM Morador WHERE Login = ? and Senha = ?";
             PreparedStatement ps;
             ResultSet rs;
             ps = connection.prepareStatement(sql);
