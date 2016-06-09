@@ -6,6 +6,7 @@
 package Interfaces;
 
 import DAO.JdbcMoradorDAO;
+import DAO.JdbcProdutoDAO;
 import Exception.DaoException;
 
 /**
@@ -18,5 +19,6 @@ public interface IDaoManager {
     void confirmarTransação();
     void abortarTransação();
     JdbcMoradorDAO getMoradorDAO();
+    JdbcProdutoDAO getProdutoDAO();
   
 }
