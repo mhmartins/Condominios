@@ -12,24 +12,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
        
-        
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/signin.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         
         <center>
             
-           
-            
-            
             <form action="Principal" method="POST" class="form-signin">
+            <h2 class="form-signin-heading">Logar</h2>
             <table>
                 <tr>
-                    <td>Login:</td>
-                    <td><input type="text" name="login" id="login" /> </td>
+                    <td><input type="text" name="login" placeholder="Login" id="login" class="form-control" /> </td>
                 </tr>
                 <tr>
-                    <td>Senha</td>
-                    <td><input type="password" name="senha" id="senha" /> </td>
+                    
+                    <td><input type="password" name="senha" placeholder="Senha" id="senha" class="form-control" /> </td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Logar" class="btn btn-lg btn-primary btn-block" /></td>

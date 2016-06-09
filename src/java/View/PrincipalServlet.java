@@ -21,7 +21,7 @@ public class PrincipalServlet extends HttpServlet {
         
         //Comentario
         
-        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/Inicio.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/Inicio.jsp");
         rd.forward(request, response);
         
         
@@ -38,14 +38,14 @@ public class PrincipalServlet extends HttpServlet {
             
             request.getSession().setAttribute("morador", morador);
             if(morador.getTipoMorador() == TipoMorador.CONDOMINO){
-                rd = request.getRequestDispatcher("WEB-INF/jsp/painel-condomino.jsp");    
+                rd = request.getRequestDispatcher("jsp/painel-condomino.jsp");    
             }else {
-                rd = request.getRequestDispatcher("WEB-INF/jsp/painel-sindico.jsp");
+                rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
             }
             
             rd.forward(request, response);
         }else {
-            rd = request.getRequestDispatcher("WEB-INF/jsp/Inicio.jsp");
+            rd = request.getRequestDispatcher("jsp/Inicio.jsp");
             rd.forward(request, response);
         }
         
