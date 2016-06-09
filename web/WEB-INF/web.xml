@@ -16,6 +16,10 @@
         <servlet-name>CadastrarProdutoServlet</servlet-name>
         <servlet-class>View.CadastrarProdutoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReuniaoServlet</servlet-name>
+        <servlet-class>View.ReuniaoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>CadastrarProdutoServlet</servlet-name>
         <url-pattern>/CadastrarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReuniaoServlet</servlet-name>
+        <url-pattern>/Reuniao</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

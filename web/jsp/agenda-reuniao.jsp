@@ -1,7 +1,7 @@
 <%-- 
-    Document   : painel-condomino
-    Created on : 07/06/2016, 19:40:37
-    Author     : Tuka
+    Document   : agenda-reuniao
+    Created on : 09/06/2016, 17:51:33
+    Author     : prisley.costa
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -23,8 +23,8 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="Principal">Inicio</a></li>
-                    <li><a href="Reuniao">Agendar Reunião</a></li>
+                    <li><a href="Principal">Inicio</a></li>
+                    <li class="active"><a href="Reuniao">Agendar Reunião</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -32,8 +32,7 @@
 
         <div class="container">
             <center>
-                <!--<a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
-                <a href="Estoque/Visualizar"><button class="btn btn-lg btn-primary">Visualizar Estoque</button></a>-->
+                <a href="CadastrarReuniao"><button class="btn btn-lg btn-primary">Agendar Reuniões</button></a>
             </center>
         </div>
     </body>

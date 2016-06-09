@@ -31,8 +31,7 @@
         </nav>
         <!-- -->
         <div class="container" style="width:40%">
-            <form>
-                
+            <form>                
                 <h4>Nome:</h4>
                 <input type="text" name="nome" id="nome" class="form-control"/>
                 <h4>Descrição (Breve)</h4>
@@ -40,12 +39,8 @@
                 <h4>Quantidade</h4>
                 <input type="number" name="nome" id="nome" class="form-control width40"/>
                 <br /><input type="button" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
-                
-                
             </form>
             
         </div>
-        
-        
     </body>
 </html>
