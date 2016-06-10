@@ -5,12 +5,19 @@
  */
 package View;
 
+import Exception.BcException;
 import Model.Morador;
 import Model.Produto;
 import Model.Reuniao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,13 +41,26 @@ public class CadastrarReuniao extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException  {
         Reuniao reuniao;
         reuniao = new Reuniao();
         reuniao.setAssunto(request.getParameter("nome"));
         reuniao.setPauta(request.getParameter("descricao"));
-        Date data = new Date(request.getParameter("dataReuniao"));
-        reuniao.setData(data);
+        
+       
+        
+         try { 
+            String dataString = request.getParameter("dataReuniao");
+            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            Date data = df.parse(dataString);
+            reuniao.setData(data);
+            
+         } catch (ParseException ex) {
+            ex.printStackTrace();
+            throw new BcException(ex.getMessage());
+        }
+       
+        
         Morador morador;
         morador = (Morador) request.getSession().getAttribute("morador");
         reuniao.setMorador(morador);

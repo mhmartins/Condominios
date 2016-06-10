@@ -1,6 +1,6 @@
 <%-- 
-    Document   : estoque-inicio
-    Created on : 09/06/2016, 11:40:09
+    Document   : cadastrar-estoque
+    Created on : 09/06/2016, 13:34:29
     Author     : desenvolvimento
 --%>
 
@@ -9,8 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,16 +29,19 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
-  
-        <div class="container">
-            <center>
-                <a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
-                <a href="ListarEstoque"><button class="btn btn-lg btn-primary">Visualizar Estoque</button></a>
-            </center>
-        </div>
+        <!-- ALTERAR ESSE CARA -->
+        <div class="container" style="width:40%">
+            <form action="" method="POST">                
+                <h4>Nome:</h4>
+                <input type="text" name="nome" id="nome" class="form-control"/>
+                <h4>Descrição (Breve)</h4>
+                <input type="text" name="descricao" id="descricao" class="form-control"/>
+                <h4>Quantidade</h4>
+                <input type="number" name="quantidade" id="quantidade" class="form-control width40"/>
+                <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
+                
+            </form>
             
-        
-        
+        </div>
     </body>
 </html>
