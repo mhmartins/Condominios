@@ -29,8 +29,7 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
-  
+
         <div class="container">
             <center>
                 <a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
@@ -38,8 +37,5 @@
             
             </center>
         </div>
-            
-        
-        
     </body>
 </html>
