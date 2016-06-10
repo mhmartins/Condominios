@@ -40,12 +40,12 @@ public class JdbcProdutoDAO implements IProdutoDAO{
             ResultSet rs;
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
-            while(rs.next()){
-                produtos = new ArrayList<Produto>();
+            produtos = new ArrayList<Produto>();
+            while(rs.next()){    
                 produtos.add(populateProduto(rs));
-                return produtos;
             }
-            return null;
+            return produtos;
+            
         } catch (SQLException ex) {
             throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
         }
