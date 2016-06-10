@@ -31,7 +31,7 @@ public class ProdutoBC implements IProdutoDAO{
 
     @Override
     public List<Produto> getProdutos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ProdutoDAO.getInstance().getProdutos();
     }
 
     @Override

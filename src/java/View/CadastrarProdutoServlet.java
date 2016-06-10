@@ -45,9 +45,9 @@ public class CadastrarProdutoServlet extends HttpServlet {
         RequestDispatcher rd;
         
         if(ProdutoBC.getInstance().cadastrarProduto(produto)){
-            rd  = request.getRequestDispatcher("Estoque");
+            rd  = request.getRequestDispatcher("jsp/estoque-inicio.jsp");
         }else {
-            rd = request.getRequestDispatcher("CadastrarProduto");
+            rd = request.getRequestDispatcher("jsp/cadastrar-estoque.jsp");
         }
         rd.forward(request, response);
     }

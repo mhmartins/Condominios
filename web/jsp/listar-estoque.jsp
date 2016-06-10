@@ -1,16 +1,18 @@
 <%-- 
-    Document   : estoque-inicio
-    Created on : 09/06/2016, 11:40:09
-    Author     : desenvolvimento
+    Document   : listar-estoque
+    Created on : 09/06/2016, 20:37:40
+    Author     : Tuka
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
         <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -30,16 +32,25 @@
             </div>
         </nav>
         
-  
         <div class="container">
-            <center>
-                <a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
-                <a href="ListarEstoque"><button class="btn btn-lg btn-primary">Visualizar Estoque</button></a>
-            
-            </center>
+            <h2>Produtos em Estoque</h2>
+            <table class="table">
+                <tr class="text-primary">
+                    <td>Nome</td>
+                    <td>Descrição</td>
+                    <td>Quantidade</td>
+                </tr>
+                 
+            <c:forEach var="produto" items="${produtos}">
+                <tr>
+                    <td>${produto.nome}</td>
+                    <td>${produto.descricao}</td>
+                    <td>${produto.quantidade}</td>
+                </tr>
+            </c:forEach>
+                
+            </table>
         </div>
-            
-        
         
     </body>
 </html>
