@@ -31,6 +31,7 @@ public class JdbcDaoManager implements IDaoManager{
     private Connection connection;
     private JdbcMoradorDAO moradorDAO;
     private JdbcProdutoDAO produtoDAO;
+    private JdbcReuniaoDAO reuniaoDAO;
     
     public JdbcDaoManager(){
         
@@ -51,7 +52,7 @@ public class JdbcDaoManager implements IDaoManager{
         }
         moradorDAO = new JdbcMoradorDAO(connection);
         produtoDAO = new JdbcProdutoDAO(connection);
-          
+        reuniaoDAO = new JdbcReuniaoDAO(connection);
         
     }
 
@@ -98,6 +99,14 @@ public class JdbcDaoManager implements IDaoManager{
             iniciar();
         }
         return produtoDAO;
+    }
+
+    @Override
+    public JdbcReuniaoDAO getReuniaoDAO() {
+        if(reuniaoDAO == null) {
+            iniciar();
+        }
+        return reuniaoDAO;
     }
 
 }

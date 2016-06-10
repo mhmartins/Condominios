@@ -1,15 +1,35 @@
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author prisley.costa
  */
 public class Reuniao {
     private int idReuniao;
-    private String assunto, descricao;
-    
+    private String assunto, pauta;
+    private Date data;
+    private Morador morador;
+
     public Reuniao() {
         
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public Morador getMorador() {
+        return morador;
+    }
+
+    public void setMorador(Morador morador) {
+        this.morador = morador;
     }
 
     public int getIdReuniao() {
@@ -28,12 +48,12 @@ public class Reuniao {
         this.assunto = assunto;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getPauta() {
+        return pauta;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setPauta(String pauta) {
+        this.pauta = pauta;
     }
     
     

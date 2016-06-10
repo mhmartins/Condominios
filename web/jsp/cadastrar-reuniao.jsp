@@ -31,12 +31,15 @@
             </div>
         </nav>
         <div class="container" style="width:40%">
-            <form>                
+            <form action="" method="POST">                
                 <h4>Assunto:</h4>
                 <input type="text" name="assunto" id="assunto" class="form-control"/>
-                <br /><input type="button" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
+                <h4>Pauta Reunião:</h4>
+                <input type="text" name="pauta" id="pauta" class="form-control"/>
+                <h4>Data da Reunião:</h4>
+                <input type="date" name="dataReuniao" id="dataReuniao" class="form-control "/>
+                <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
             </form>
-            
         </div>
     </body>
 </html>
