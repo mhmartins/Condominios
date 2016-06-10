@@ -5,12 +5,15 @@
  */
 package View;
 
+import BC.ReuniaoBC;
 import Model.Morador;
-import Model.Produto;
 import Model.Reuniao;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author prisley.costa
  */
-@WebServlet(name = "CadastrarReuniaoServlet", urlPatterns = {"/CadastrarReuniao"})
-public class CadastrarReuniao extends HttpServlet {
+public class CadastrarReuniaoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,14 +39,28 @@ public class CadastrarReuniao extends HttpServlet {
             throws ServletException, IOException {
         Reuniao reuniao;
         reuniao = new Reuniao();
-        reuniao.setAssunto(request.getParameter("nome"));
-        reuniao.setPauta(request.getParameter("descricao"));
-        Date data = new Date(request.getParameter("dataReuniao"));
-        reuniao.setData(data);
+        reuniao.setAssunto(request.getParameter("assunto"));
+        reuniao.setPauta(request.getParameter("pauta"));
+
+        SimpleDateFormat sdf;
+        sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date dataReuniao = sdf.parse(request.getParameter("dataReuniao"));
+            dataReuniao.setHours(Integer.parseInt(request.getParameter("horaReuniao")));
+            reuniao.setData(dataReuniao);
+        } catch (ParseException e) {
+        }
+
         Morador morador;
         morador = (Morador) request.getSession().getAttribute("morador");
         reuniao.setMorador(morador);
 
         RequestDispatcher rd;
+        if(ReuniaoBC.getInstance().cadastrarReuniao(reuniao)){
+            rd  = request.getRequestDispatcher("jsp/agenda-reuniao.jsp");
+        }else {
+            rd = request.getRequestDispatcher("jsp/cadastrar-reuniao.jsp");
+        }
+        rd.forward(request, response);
     }
 }

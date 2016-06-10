@@ -38,6 +38,8 @@
                 <input type="text" name="pauta" id="pauta" class="form-control"/>
                 <h4>Data da Reunião:</h4>
                 <input type="date" name="dataReuniao" id="dataReuniao" class="form-control "/>
+                <h4>Hora Reunião</h4>
+                <input type="time" name="horaReuniao" id="horaReuniao" class="form-control"/>
                 <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
             </form>
         </div>

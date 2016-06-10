@@ -37,6 +37,7 @@ public class JdbcReuniaoDAO implements IReuniao{
             ps.setDate(4, dateSql);
 
             if(ps.executeUpdate() == 1){
+                
                 return true;
             }else {
                 return false;

@@ -27,13 +27,17 @@ public class ReuniaoBC implements IReuniao {
 
     @Override
     public boolean cadastrarReuniao(Reuniao reuniao) {
-        if(!reuniao.getAssunto().equals("")) {
+        if(reuniao == null) {
+            throw new BcException("Reuniao nula");
+        } else if(reuniao.getAssunto().equals("")) {
             throw new BcException("Assunto nao informado");
-        } else if (!reuniao.getData().before(new Date())) {
+        } else if(reuniao.getData() == null) {
+            throw new BcException("Data nula");
+        }else if (reuniao.getData().before(new Date())) {
             throw new BcException("Impossivel agendar reuniao em data anterior à atual");
-        } else if (!reuniao.getMorador().equals("")) {
+        } else if (reuniao.getMorador().equals("")) {
             throw new BcException("Morador nao informado");
-        } else if (!reuniao.getPauta().equals("")) {
+        } else if (reuniao.getPauta().equals("")) {
             throw new BcException("Pauta nao informada");
         } else {
             return ReuniaoDAO.getInstance().cadastrarReuniao(reuniao);
