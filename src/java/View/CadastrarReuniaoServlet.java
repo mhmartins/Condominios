@@ -37,12 +37,13 @@ public class CadastrarReuniaoServlet extends HttpServlet {
             throws ServletException, IOException {
         Reuniao reuniao;
         reuniao = new Reuniao();
-        reuniao.setAssunto(request.getParameter("nome"));
-        reuniao.setPauta(request.getParameter("descricao"));
+        reuniao.setAssunto(request.getParameter("assunto"));
+        reuniao.setPauta(request.getParameter("pauta"));
 
         try {
             String dataString = request.getParameter("dataReuniao");
             SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+
             Date data = df.parse(dataString);
             reuniao.setData(data);
 

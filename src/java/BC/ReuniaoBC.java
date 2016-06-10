@@ -9,6 +9,7 @@ import DAO.ReuniaoDAO;
 import Exception.BcException;
 import Interfaces.IReuniao;
 import Model.Reuniao;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
