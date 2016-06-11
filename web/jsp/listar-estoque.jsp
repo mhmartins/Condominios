@@ -36,17 +36,20 @@
             <h2>Produtos em Estoque</h2>
             <table class="table">
                 <tr class="text-primary">
-                    <td>Nome</td>
+                    <td style="width: 20%">Nome</td>
                     <td>Descrição</td>
-                    <td>Quantidade</td>
+                    <td style="width:10%; text-align: center">Quantidade</td>
+                    <td></td>
                 </tr>
                  
             <c:forEach var="produto" items="${produtos}">
                 <tr>
                     <td>${produto.nome}</td>
                     <td>${produto.descricao}</td>
-                    <td>${produto.quantidade}</td>
+                    <td align="center">${produto.quantidade}</td>
+                    <td><a href="EditarProduto?id=${produto.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
                 </tr>
+                
             </c:forEach>
                 
             </table>

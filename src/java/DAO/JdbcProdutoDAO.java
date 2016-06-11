@@ -58,6 +58,7 @@ public class JdbcProdutoDAO implements IProdutoDAO{
         produto.setNome(rs.getString("nome"));
         produto.setDescricao(rs.getString("descricao"));
         produto.setQuantidade(rs.getInt("quantidade"));
+        produto.setId(rs.getInt("id"));
         return produto;
     }
 

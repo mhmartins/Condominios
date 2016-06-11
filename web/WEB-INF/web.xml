@@ -20,6 +20,10 @@
         <servlet-name>ListarEstoqueServlet</servlet-name>
         <servlet-class>View.ListarEstoqueServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <servlet-class>View.EditarProdutoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ListarEstoqueServlet</servlet-name>
         <url-pattern>/ListarEstoque</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <url-pattern>/EditarProduto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
