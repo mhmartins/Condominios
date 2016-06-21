@@ -46,4 +46,29 @@ public class ProdutoBC implements IProdutoDAO{
             return ProdutoDAO.getInstance().cadastrarProduto(produto);
         }
     }
+
+    @Override
+    public Produto getProdutoById(int id) {
+        if(id < 0){
+           throw new BcException("Produto invalido"); 
+        }else {
+            return ProdutoDAO.getInstance().getProdutoById(id);
+        }
+    }
+
+    @Override
+    public boolean atualizarProduto(Produto produto) {
+        if(produto.getId() < 0){
+           throw new BcException("Produto invalido"); 
+        }else if(produto.getNome().trim().equals("") || produto.getNome() == null){
+            throw new BcException("Produto sem nome");
+        }else if (produto.getDescricao().trim().equals("") || produto.getDescricao() == null) {
+            throw new BcException("Produto sem descrição");
+        }else if (produto.getQuantidade() <= 0){
+            throw new BcException("Quantidade inválida");
+        }else {
+            return ProdutoDAO.getInstance().atualizarProduto(produto);
+        }
+        
+    }
 }

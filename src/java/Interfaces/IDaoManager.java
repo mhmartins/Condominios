@@ -22,4 +22,6 @@ public interface IDaoManager {
     JdbcMoradorDAO getMoradorDAO();
     JdbcProdutoDAO getProdutoDAO();
     JdbcReuniaoDAO getReuniaoDAO();
+    JdbcAgendamentoDAO getAgendamentoDAO();
+    JdbcAreaDAO getAgendaDAO();
 }

@@ -5,6 +5,8 @@
  */
 package View;
 
+import BC.ProdutoBC;
+import Model.Produto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -25,7 +27,8 @@ public class EditarProdutoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("jsp/editar-produto.jsp");
-        request.setAttribute("idProduto", request.getParameter("id"));
+        Produto produto = ProdutoBC.getInstance().getProdutoById(Integer.valueOf(request.getParameter("id")));
+        request.setAttribute("produto", produto);
         rd.forward(request, response);
         
     }
@@ -33,6 +36,25 @@ public class EditarProdutoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Produto produto = new Produto();
+        produto.setId(Integer.valueOf(request.getParameter("id")));
+        produto.setNome(request.getParameter("nome"));
+        produto.setDescricao(request.getParameter("descricao"));
+        produto.setQuantidade(Integer.valueOf(request.getParameter("quantidade")));
+        PrintWriter out = response.getWriter();
+        
+        RequestDispatcher rd;
+        if(ProdutoBC.getInstance().atualizarProduto(produto)){
+            rd = request.getRequestDispatcher("jsp/estoque-inicio.jsp");
+            out.println("<script type=\"text/javascript\">alert('Produto atualizado com Sucesso!')</script>");
+        }else {
+            rd = request.getRequestDispatcher("jsp/editar-produto.jsp");
+            produto = ProdutoBC.getInstance().getProdutoById(Integer.valueOf(request.getParameter("id")));
+            request.setAttribute("produto", produto);
+            out.println("<script type=\"text/javascript\">alert('Produto atualizado com Sucesso!')</script>");
+        }
+        out.close();
+        rd.forward(request, response);
     }
 
 }

@@ -16,4 +16,6 @@ public interface IProdutoDAO {
     
     List<Produto> getProdutos();
     boolean cadastrarProduto(Produto produto);
+    Produto getProdutoById(int id);
+    boolean atualizarProduto(Produto produto);
 }

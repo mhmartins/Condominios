@@ -44,6 +44,24 @@ public class ProdutoDAO implements IProdutoDAO{
         IProdutoDAO produtoDAO = iManager.getProdutoDAO();
         return produtoDAO.cadastrarProduto(produto);    
     }
+
+    @Override
+    public Produto getProdutoById(int id) {
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IProdutoDAO produtoDAO = iManager.getProdutoDAO();
+        return produtoDAO.getProdutoById(id);
+    }
+
+    @Override
+    public boolean atualizarProduto(Produto produto) {
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IProdutoDAO produtoDAO = iManager.getProdutoDAO();
+        return produtoDAO.atualizarProduto(produto);
+    }
     
     
     

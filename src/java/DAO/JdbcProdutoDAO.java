@@ -83,5 +83,48 @@ public class JdbcProdutoDAO implements IProdutoDAO{
     
     
     }
+
+    @Override
+    public Produto getProdutoById(int id) {
+       try {
+            Produto produto = null;
+            String sql = "SELECT * FROM Produto";
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if(rs.next()){    
+                produto = populateProduto(rs);
+            }
+            return produto;
+            
+        } catch (SQLException ex) {
+            throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
+        }
+    }
+
+    @Override
+    public boolean atualizarProduto(Produto produto) {
+        try {
+            
+            String sql = "UPDATE Produto set nome = ?, descricao = ?, quantidade = ? WHERE id = ?";
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, produto.getNome());
+            ps.setString(2, produto.getDescricao());
+            ps.setInt(3, produto.getQuantidade());
+            ps.setInt(4,produto.getId());
+            
+            if (ps.executeUpdate() == 1){
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (SQLException ex) {
+            throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
+        }
+    }
     
 }
