@@ -5,8 +5,6 @@
  */
 package BC;
 
-import DAO.JdbcDaoManager;
-import DAO.JdbcMoradorDAO;
 import DAO.MoradorDAO;
 import Exception.BcException;
 import Model.Morador;
@@ -16,24 +14,20 @@ import Model.Morador;
  * @author Tuka
  */
 public class MoradorBC {
-    
+
     public static MoradorBC instance;
-  //  private JdbcMoradorDAO moradorDAO;
-    
+
     public static MoradorBC getInstance() {
         if(instance == null){
             instance = new MoradorBC();
         }
         return instance;
     }
-    
-    
+
     public boolean verificaLogin(Morador morador){
         if(morador.getLogin().equals("") || morador.getSenha().equals("") || morador.getLogin() == null || morador.getSenha() == null){
             throw new BcException("Morador Inválido");
         }
-        
         return MoradorDAO.getInstance().verificaLogin(morador);
     }
-    
 }

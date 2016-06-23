@@ -28,7 +28,12 @@ public class JdbcReuniaoDAO implements IReuniao{
     public boolean cadastrarReuniao(Reuniao reuniao) {
         try {
             PreparedStatement ps;        
-            String sql = "INSERT INTO Reuniao (assunto, pauta, morador, dataReuniao) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO Reuniao ("
+                        + "assunto, "
+                        + "pauta, "
+                        + "idMorador, "
+                        + "dataReuniao)"
+                        + " VALUES (?, ?, ?, ?)";
             ps = connection.prepareStatement(sql);
             ps.setString(1, reuniao.getAssunto());
             ps.setString(2, reuniao.getPauta());

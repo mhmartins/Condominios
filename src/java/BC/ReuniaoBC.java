@@ -9,7 +9,6 @@ import DAO.ReuniaoDAO;
 import Exception.BcException;
 import Interfaces.IReuniao;
 import Model.Reuniao;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -34,8 +33,9 @@ public class ReuniaoBC implements IReuniao {
             throw new BcException("Assunto nao informado");
         } else if(reuniao.getData() == null) {
             throw new BcException("Data nula");
-        }else if (reuniao.getData().before(new Date())) {
-            throw new BcException("Impossivel agendar reuniao em data anterior à atual");
+        //AQUI NÃO TA FUNCIONANDO A DATA
+        //}else if (reuniao.getData().before(new Date())) {
+            //throw new BcException("Impossivel agendar reuniao em data anterior à atual");
         } else if (reuniao.getMorador().equals("")) {
             throw new BcException("Morador nao informado");
         } else if (reuniao.getPauta().equals("")) {

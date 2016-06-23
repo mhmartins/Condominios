@@ -6,12 +6,9 @@
 package View;
 
 import BC.ReuniaoBC;
-import Exception.BcException;
 import Model.Morador;
 import Model.Reuniao;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,19 +36,20 @@ public class CadastrarReuniaoServlet extends HttpServlet {
         reuniao = new Reuniao();
         reuniao.setAssunto(request.getParameter("assunto"));
         reuniao.setPauta(request.getParameter("pauta"));
-
+        reuniao.setData(new Date());
+/*
         try {
             String dataString = request.getParameter("dataReuniao");
-            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
-            Date data = df.parse(dataString);
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            java.sql.Date data = new java.sql.Date(format.parse(dataString).getTime());
             reuniao.setData(data);
 
         } catch (ParseException ex) {
             ex.printStackTrace();
             throw new BcException(ex.getMessage());
         }
-
+*/
         Morador morador;
         morador = (Morador) request.getSession().getAttribute("morador");
         reuniao.setMorador(morador);
