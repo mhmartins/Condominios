@@ -5,11 +5,10 @@
  */
 package DAO;
 
-import BC.ReuniaoBC;
 import Interfaces.IDaoManager;
 import Interfaces.IReuniao;
 import Model.Reuniao;
-
+import java.util.List;
 /**
  *
  * @author prisley.costa
@@ -32,6 +31,15 @@ public class ReuniaoDAO implements IReuniao {
         iManager.iniciar();
         IReuniao iReuniao = iManager.getReuniaoDAO();
         return iReuniao.cadastrarReuniao(reuniao);
+    }
+
+    @Override
+    public List<Reuniao> visualizarReuniao() {
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IReuniao iReuniao = iManager.getReuniaoDAO();
+        return iReuniao.visualizarReuniao();
     }
     
 }

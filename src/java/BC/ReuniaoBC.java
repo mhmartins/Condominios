@@ -10,6 +10,7 @@ import Exception.BcException;
 import Interfaces.IReuniao;
 import Model.Reuniao;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -43,5 +44,10 @@ public class ReuniaoBC implements IReuniao {
         } else {
             return ReuniaoDAO.getInstance().cadastrarReuniao(reuniao);
         }
+    }
+
+    @Override
+    public List<Reuniao> visualizarReuniao() {
+        return ReuniaoDAO.getInstance().visualizarReuniao();
     }
 }

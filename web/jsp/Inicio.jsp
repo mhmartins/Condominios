@@ -26,7 +26,6 @@
                     <td><input type="text" name="login" placeholder="Login" id="login" class="form-control" /> </td>
                 </tr>
                 <tr>
-                    
                     <td><input type="password" name="senha" placeholder="Senha" id="senha" class="form-control" /> </td>
                 </tr>
                 <tr>
@@ -35,7 +34,5 @@
             </table>
         </form>
         </center>
-        
-       
     </body>
 </html>

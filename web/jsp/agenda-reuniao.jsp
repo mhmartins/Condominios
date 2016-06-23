@@ -24,7 +24,7 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
-                    <li class="active"><a href="Reuniao">Agendar Reunião</a></li>
+                    <li class="active"><a href="ReuniaoInicio">Agendar Reunião</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -33,6 +33,7 @@
         <div class="container">
             <center>
                 <a href="CadastrarReuniao"><button class="btn btn-lg btn-primary">Agendar Reuniões</button></a>
+                <a href="VisualizarReuniao"><button class="btn btn-lg btn-primary">Visualizar Reuniões</button></a>
             </center>
         </div>
     </body>

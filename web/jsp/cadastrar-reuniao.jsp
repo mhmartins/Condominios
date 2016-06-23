@@ -25,7 +25,7 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
-                    <li class="active"><a href="Reuniao">Agendar Reunião</a></li>
+                    <li class="active"><a href="ReuniaoInicio">Agendar Reunião</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -37,7 +37,7 @@
                 <h4>Pauta Reunião:</h4>
                 <input type="text" name="pauta" id="pauta" class="form-control"/>
                 <h4>Data da Reunião:</h4>
-                <input type="date" name="dataReuniao" id="dataReuniao" class="form-control "/>
+                <input type="date" name="dataReuniao" id="dataReuniao" class="form-control"/>
                 <h4>Hora Reunião</h4>
                 <input type="time" name="horaReuniao" id="horaReuniao" class="form-control"/>
                 <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>

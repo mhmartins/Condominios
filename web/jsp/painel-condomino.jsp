@@ -24,7 +24,7 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li class="active"><a href="Principal">Inicio</a></li>
-                    <li><a href="Reuniao">Agendar Reunião</a></li>
+                    <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>

@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Model.Reuniao;
+import java.util.List;
 
 /**
  *
@@ -13,5 +14,5 @@ import Model.Reuniao;
  */
 public interface IReuniao {
     boolean cadastrarReuniao(Reuniao reuniao);
-    
+    List<Reuniao> visualizarReuniao();
 }

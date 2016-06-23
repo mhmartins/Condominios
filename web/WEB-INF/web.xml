@@ -36,6 +36,14 @@
         <servlet-name>VisualizarAgendamentosServlet</servlet-name>
         <servlet-class>View.VisualizarAgendamentosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VisualizarReuniaoServlet</servlet-name>
+        <servlet-class>View.VisualizarReuniaoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReuniaoServlet</servlet-name>
+        <servlet-class>View.ReuniaoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -50,7 +58,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastrarReuniaoServlet</servlet-name>
-        <url-pattern>/Reuniao</url-pattern>
+        <url-pattern>/CadastrarReuniao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReuniaoServlet</servlet-name>
+        <url-pattern>/ReuniaoInicio</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarEstoqueServlet</servlet-name>
@@ -71,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>VisualizarAgendamentosServlet</servlet-name>
         <url-pattern>/VisualizarAgendamentos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarReuniaoServlet</servlet-name>
+        <url-pattern>/VisualizarReuniao</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
