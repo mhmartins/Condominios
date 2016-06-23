@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import DAO.JdbcAgendamentoDAO;
+import DAO.JdbcAreaDAO;
 import DAO.JdbcMoradorDAO;
 import DAO.JdbcProdutoDAO;
 import DAO.JdbcReuniaoDAO;
@@ -23,5 +25,5 @@ public interface IDaoManager {
     JdbcProdutoDAO getProdutoDAO();
     JdbcReuniaoDAO getReuniaoDAO();
     JdbcAgendamentoDAO getAgendamentoDAO();
-    JdbcAreaDAO getAgendaDAO();
+    JdbcAreaDAO getAreaDAO();
 }

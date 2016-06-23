@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,18 +33,20 @@
             </div>
         </nav>
         
-        
-        <div class="container" style="width:40%">
+       <div class="container" style="width:40%">
             <form action="AgendarArea" method="POST">                
                 <h4>Área: </h4>
-                <select class="form-control">
+                <select class="form-control" name="id_area" id="id_area">
                     <option>Selecione</option>
+                    <c:forEach items="${areas}" var="area">
+                        <option value="${area.id}">${area.nome}</option>
+                    </c:forEach>
                 </select>
-                <h4>Dia do Agendamento:</h4>
-                <input type="date" name="descricao" id="descricao" class="form-control"/>
+                <h4>Data do Agendamento:</h4>
+                <input type="date" name="data" id="data" class="form-control"/>
                 
                 <h4>Hora do Agendamento:</h4>
-                <input type="Time" name="descricao" id="descricao" class="form-control"/>
+                <input type="Time" name="hora" id="hora" class="form-control"/>
                 <br />
                 <input type="submit" value="Agendar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
             </form>

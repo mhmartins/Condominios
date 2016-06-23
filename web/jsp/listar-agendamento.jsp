@@ -1,19 +1,20 @@
 <%-- 
-    Document   : areas-inicio
-    Created on : 21/06/2016, 12:57:51
-    Author     : desenvolvimento
+    Document   : listar-agendamento
+    Created on : 22/06/2016, 23:25:14
+    Author     : Tobias
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Áreas Comuns</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <title>JSP Page</title>
+         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,12 +31,27 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-
+        
+        
         <div class="container">
-            <center>
-                <a href="AgendarArea"><button class="btn btn-lg btn-primary">Agendar Área Comum</button></a>
-                <a href="VisualizarAgendamentos"><button class="btn btn-lg btn-primary">Visualizar Agendamentos</button></a>
-            </center>
+            <table class="table">
+                <tr class="text-primary">
+                <td>Area</td>
+                <td>Agendado Por</td>
+                <td>Horário</td>
+            </tr>
+            <c:forEach items="${agendamentos}" var="agendamento">
+                <tr>
+                    <td>${agendamento.area.nome}</td>
+                    <td>${agendamento.morador.login}</td>
+                    <td>00:00</td>
+                </tr>
+                
+            </c:forEach>
+        </table>
         </div>
+        
+        
+        
     </body>
 </html>

@@ -32,6 +32,10 @@
         <servlet-name>AgendarAreaServlet</servlet-name>
         <servlet-class>View.AgendarAreaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VisualizarAgendamentosServlet</servlet-name>
+        <servlet-class>View.VisualizarAgendamentosServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>AgendarAreaServlet</servlet-name>
         <url-pattern>/AgendarArea</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarAgendamentosServlet</servlet-name>
+        <url-pattern>/VisualizarAgendamentos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

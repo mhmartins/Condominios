@@ -56,6 +56,7 @@ public class JdbcMoradorDAO implements IMoradorDAO{
             morador.setTipoMorador(TipoMorador.SINDICO);
         }
         morador.setNumApt(rs.getInt("Apartamento"));
+        morador.setId(rs.getInt("id"));
         
     }
     

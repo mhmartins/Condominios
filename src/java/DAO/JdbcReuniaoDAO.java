@@ -32,7 +32,7 @@ public class JdbcReuniaoDAO implements IReuniao{
             ps = connection.prepareStatement(sql);
             ps.setString(1, reuniao.getAssunto());
             ps.setString(2, reuniao.getPauta());
-            ps.setInt(3, reuniao.getMorador().getIdMorador());
+            ps.setInt(3, reuniao.getMorador().getId());
             java.sql.Date dateSql = new java.sql.Date(reuniao.getData().getTime());
             ps.setDate(4, dateSql);
 

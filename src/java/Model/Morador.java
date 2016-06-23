@@ -13,7 +13,7 @@ import Model.Enum.TipoMorador;
  */
 public class Morador {
     
-    private int idMorador;
+    private int id;
     private int numApt;
     private String login,senha;
     private TipoMorador tipoMorador;
@@ -22,16 +22,21 @@ public class Morador {
         this.login = login;
         this.senha = senha;
     }
+    
+    public Morador(String login){
+        this.login = login;
+    }
+    
     public int getNumApt() {
         return numApt;
     }
 
-    public int getIdMorador() {
-        return idMorador;
+    public int getId() {
+        return id;
     }
 
-    public void setIdMorador(int idMorador) {
-        this.idMorador = idMorador;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNumApt(int numApt) {
