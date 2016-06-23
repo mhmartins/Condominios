@@ -26,6 +26,8 @@
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
                     <li class="active"><a href="Estoque">Controle de Estoque</a></li>
+                    <li><a href="AreasComuns">Áreas Comuns</a></li>
+                    <li><a href="Mural">Mural de Comunicação</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>

@@ -34,7 +34,7 @@ public class JdbcDaoManager implements IDaoManager{
     private JdbcReuniaoDAO reuniaoDAO;
     private JdbcAreaDAO areaDAO;
     private JdbcAgendamentoDAO agendamentoDAO;
-    
+    private JdbcInformacaoDAO informacaoDAO;
     
     
     public JdbcDaoManager(){
@@ -59,6 +59,7 @@ public class JdbcDaoManager implements IDaoManager{
         reuniaoDAO = new JdbcReuniaoDAO(connection);
         agendamentoDAO = new JdbcAgendamentoDAO(connection);
         areaDAO = new JdbcAreaDAO(connection);
+        informacaoDAO = new JdbcInformacaoDAO(connection);
         
     }
 
@@ -129,6 +130,14 @@ public class JdbcDaoManager implements IDaoManager{
             iniciar();
         }
         return areaDAO;
+    }
+
+    @Override
+    public JdbcInformacaoDAO getInformacaoDAO() {
+        if(informacaoDAO == null){
+            iniciar();
+        }
+        return informacaoDAO;
     }
 
 }

@@ -26,6 +26,7 @@
                     <li><a href="Principal">Inicio</a></li>
                     <li><a href="Estoque">Controle de Estoque</a></li>
                     <li class="active"><a href="AreasComuns">Áreas Comuns</a></li>
+                    <li><a href="Mural">Mural de Comunicação</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
