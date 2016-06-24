@@ -19,6 +19,6 @@ public interface IFuncionarioDAO {
     boolean cadastrarFuncionario(Funcionario funcionario);
     boolean removerFuncionario(Funcionario funcionario);
     boolean atualizarProduto(Produto produto);
-    Funcionario verificaLogin(Funcionario funcionario);
+    boolean verificaLogin(Funcionario funcionario);
     
 }

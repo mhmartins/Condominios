@@ -1,9 +1,11 @@
 
 package View;
 
+import BC.FuncionarioBC;
 import BC.MoradorBC;
 import BC.MuralInformacaoBC;
 import Model.Enum.TipoMorador;
+import Model.Funcionario;
 import Model.Morador;
 import Model.MuralInformacoes;
 import java.io.IOException;
@@ -20,10 +22,7 @@ public class PrincipalServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        //Comentario
         RequestDispatcher rd;
-        
         Morador morador = (Morador)request.getSession().getAttribute("morador");
         if(morador != null){
             MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
@@ -45,6 +44,7 @@ public class PrincipalServlet extends HttpServlet {
         
         Morador morador;
         morador = new Morador(request.getParameter("login"),request.getParameter("senha"));
+        Funcionario funcionario = new Funcionario(request.getParameter("login"),request.getParameter("senha"));
         RequestDispatcher rd;
         if(MoradorBC.getInstance().verificaLogin(morador)){
             
@@ -56,7 +56,9 @@ public class PrincipalServlet extends HttpServlet {
             }
             
            
-        }else {
+        }else if(FuncionarioBC.getInstance().verificaLogin(funcionario)){
+            rd = request.getRequestDispatcher("jsp/painel-funcionario.jsp"); 
+        } else {
             rd = request.getRequestDispatcher("jsp/Inicio.jsp"); 
         }
         

@@ -34,26 +34,40 @@ public class FuncionarioBC implements IFuncionarioDAO {
     
     @Override
     public List<Funcionario> getFuncionarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return FuncionarioDAO.getInstance().getFuncionarios();
     }
 
     @Override
     public boolean cadastrarFuncionario(Funcionario funcionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(funcionario == null){
+            throw new BcException("Funcionário inválido");
+        }else if(funcionario.getLogin().trim().isEmpty() || funcionario.getLogin() == null){
+            throw new BcException("Login inválido");
+        }else if(funcionario.getSenha().trim().isEmpty() || funcionario.getSenha() == null) {
+            throw new BcException("Senha inválida");
+        }else {
+            return FuncionarioDAO.getInstance().cadastrarFuncionario(funcionario);
+        }
     }
 
     @Override
     public boolean removerFuncionario(Funcionario funcionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(funcionario == null){
+            throw new BcException("Funcionário inválido");
+        }else if(funcionario.getId() < 0){
+            throw new BcException("Funcionario Inválido");
+        }else {
+            return FuncionarioDAO.getInstance().removerFuncionario(funcionario);
+        }
     }
 
     @Override
     public boolean atualizarProduto(Produto produto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ProdutoBC.getInstance().atualizarProduto(produto);
     }
 
     @Override
-    public Funcionario verificaLogin(Funcionario funcionario) {
+    public boolean verificaLogin(Funcionario funcionario) {
         if(funcionario.getLogin().trim().isEmpty()){
             throw new BcException("Login inválido");
         }else if(funcionario.getSenha().isEmpty()){

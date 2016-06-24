@@ -33,17 +33,30 @@ public class FuncionarioDAO implements IFuncionarioDAO{
     
     @Override
     public List<Funcionario> getFuncionarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IFuncionarioDAO funcionarioDAO = iManager.getFuncionarioDAO();
+        return funcionarioDAO.getFuncionarios();
     }
 
     @Override
     public boolean cadastrarFuncionario(Funcionario funcionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IFuncionarioDAO funcionarioDAO = iManager.getFuncionarioDAO();
+        return funcionarioDAO.cadastrarFuncionario(funcionario);
     }
 
     @Override
     public boolean removerFuncionario(Funcionario funcionario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IFuncionarioDAO funcionarioDAO = iManager.getFuncionarioDAO();
+        return funcionarioDAO.removerFuncionario(funcionario);
+                
     }
 
     @Override
@@ -52,7 +65,7 @@ public class FuncionarioDAO implements IFuncionarioDAO{
     }
 
     @Override
-    public Funcionario verificaLogin(Funcionario funcionario) {
+    public boolean verificaLogin(Funcionario funcionario) {
         IDaoManager iManager;
         iManager = new JdbcDaoManager();
         iManager.iniciar();

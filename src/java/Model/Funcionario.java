@@ -18,6 +18,10 @@ public class Funcionario {
     public Funcionario(){
         
     }
+     public Funcionario(String login, String senha){
+        this.login = login;
+        this.senha = senha;
+    }
     
     public int getId() {
         return id;
