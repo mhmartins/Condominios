@@ -56,6 +56,10 @@
         <servlet-name>LogoffServlet</servlet-name>
         <servlet-class>View.LogoffServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastrarMoradorServlet</servlet-name>
+        <servlet-class>View.CadastrarMoradorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>LogoffServlet</servlet-name>
         <url-pattern>/Logoff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarMoradorServlet</servlet-name>
+        <url-pattern>/CadastrarMorador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -18,6 +18,10 @@ public class Morador {
     private String login,senha;
     private TipoMorador tipoMorador;
 
+    public Morador() {
+        
+    }
+    
     public Morador(String login, String senha){
         this.login = login;
         this.senha = senha;
