@@ -5,9 +5,10 @@
  */
 package View;
 
-import BC.ReuniaoBC;
-import Model.Reuniao;
+import BC.MoradorBC;
+import Model.Morador;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,14 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author prisl
  */
-public class VisualizarReuniaoServlet extends HttpServlet {
+public class VisualizarMoradorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Reuniao> reunioes = ReuniaoBC.getInstance().visualizarReuniao();
-        request.setAttribute("reunioes", reunioes);
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/listar-reuniao.jsp");
+        List<Morador> moradores = MoradorBC.getInstance().visualizarMoradores();
+        request.setAttribute("moradores", moradores);
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/listar-morador.jsp");
         rd.forward(request, response);
     }
 

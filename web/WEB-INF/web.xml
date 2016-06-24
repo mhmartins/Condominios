@@ -60,6 +60,18 @@
         <servlet-name>CadastrarMoradorServlet</servlet-name>
         <servlet-class>View.CadastrarMoradorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VisualizarMoradorServlet</servlet-name>
+        <servlet-class>View.VisualizarMoradorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MoradorServlet</servlet-name>
+        <servlet-class>View.MoradorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarMoradorServlet</servlet-name>
+        <servlet-class>View.EditarMoradorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -119,6 +131,18 @@
     <servlet-mapping>
         <servlet-name>CadastrarMoradorServlet</servlet-name>
         <url-pattern>/CadastrarMorador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarMoradorServlet</servlet-name>
+        <url-pattern>/VisualizarMoradores</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MoradorServlet</servlet-name>
+        <url-pattern>/MoradorInicio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarMoradorServlet</servlet-name>
+        <url-pattern>/EditarMorador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

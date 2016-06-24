@@ -5,8 +5,11 @@
  */
 package View;
 
+import BC.MoradorBC;
+import BC.MuralInformacaoBC;
 import Model.Enum.TipoMorador;
 import Model.Morador;
+import Model.MuralInformacoes;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,5 +39,14 @@ public class CadastrarMoradorServlet extends HttpServlet {
         morador.setNumApt(Integer.parseInt(request.getParameter("numeroApt")));
         morador.setSenha(request.getParameter("senha"));
         morador.setTipoMorador(TipoMorador.CONDOMINO);
+        RequestDispatcher rd;
+        if (MoradorBC.getInstance().cadastrarMorador(morador)) {
+            MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
+            request.setAttribute("mural", mural);
+            rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
+        } else {
+            rd = request.getRequestDispatcher("jsp/cadastrar-morador.jsp");
+        }
+        rd.forward(request, response);
     }
 }

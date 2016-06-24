@@ -37,5 +37,6 @@
                 <a href="Estoque/Visualizar"><button class="btn btn-lg btn-primary">Visualizar Estoque</button></a>-->
             </center>
         </div>
+        <%@include file="mural-comunicacao.jsp" %> 
     </body>
 </html>

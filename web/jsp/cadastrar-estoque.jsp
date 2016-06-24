@@ -27,7 +27,7 @@
                     <li class="active"><a href="Estoque">Controle de Estoque</a></li>
                     <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li><a href="">Cadastrar Morador</a></li>
+                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->

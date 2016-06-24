@@ -1,17 +1,16 @@
 <%-- 
-    Document   : listar-estoque
-    Created on : 09/06/2016, 20:37:40
-    Author     : Tuka
+    Document   : listar-morador
+    Created on : 23/06/2016, 23:16:29
+    Author     : prisl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Visualizar Estoque</title>
+        <title>Listagem de Moradores</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -26,38 +25,32 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
-                    <li class="active"><a href="Estoque">Controle de Estoque</a></li>
+                    <li><a href="Estoque">Controle de Estoque</a></li>
                     <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                    <li class="active"><a href="MoradorInicio">Cadastrar Morador</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
+
         <div class="container">
-            <h2>Produtos em Estoque</h2>
+            <h2>Moradores Cadastrados</h2>
             <table class="table">
                 <tr class="text-primary">
-                    <td style="width: 20%">Nome</td>
-                    <td>Descrição</td>
-                    <td style="width:10%; text-align: center">Quantidade</td>
-                    <td></td>
+                    <td>Editar</td>
+                    <td>Nome</td>
+                    <td>Apartamento</td>
                 </tr>
-                 
-            <c:forEach var="produto" items="${produtos}">
-                <tr>
-                    <td>${produto.nome}</td>
-                    <td>${produto.descricao}</td>
-                    <td align="center">${produto.quantidade}</td>
-                    <td><a href="EditarProduto?id=${produto.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
-                </tr>
-                
-            </c:forEach>
-                
+                <c:forEach items="${moradores}" var="m">
+                    <tr>
+                        <td><a href="EditarMorador?id=${m.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
+                        <td>${m.login}</td>
+                        <td>${m.numApt}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </div>
-        
     </body>
 </html>

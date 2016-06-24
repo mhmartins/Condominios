@@ -26,6 +26,8 @@ public class PrincipalServlet extends HttpServlet {
         
         Morador morador = (Morador)request.getSession().getAttribute("morador");
         if(morador != null){
+            MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
+            request.setAttribute("mural", mural);
             if(morador.getTipoMorador() == TipoMorador.CONDOMINO){
                 rd = request.getRequestDispatcher("jsp/painel-condomino.jsp");    
             }else {
@@ -55,8 +57,7 @@ public class PrincipalServlet extends HttpServlet {
             
            
         }else {
-            rd = request.getRequestDispatcher("jsp/Inicio.jsp");
-            
+            rd = request.getRequestDispatcher("jsp/Inicio.jsp"); 
         }
         
         MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();

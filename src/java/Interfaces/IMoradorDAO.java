@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Model.Morador;
+import java.util.List;
 
 /**
  *
@@ -14,5 +15,8 @@ import Model.Morador;
 public interface IMoradorDAO {
     
     boolean verificaLogin(Morador morador);
-    
+    boolean cadastrarMorador(Morador morador);
+    List<Morador> visualizarMoradores();
+    Morador getMoradorById(int id);
+    boolean updateMorador(Morador morador);
 }
