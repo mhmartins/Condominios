@@ -12,6 +12,7 @@ import DAO.JdbcInformacaoDAO;
 import DAO.JdbcMoradorDAO;
 import DAO.JdbcProdutoDAO;
 import DAO.JdbcReuniaoDAO;
+import DAO.JdbcSolicitacaoDAO;
 import Exception.DaoException;
 
 /**
@@ -30,4 +31,5 @@ public interface IDaoManager {
     JdbcAreaDAO getAreaDAO();
     JdbcInformacaoDAO getInformacaoDAO();
     JdbcFuncionarioDAO getFuncionarioDAO();
+    JdbcSolicitacaoDAO getSolicitacaoDAO();
 }

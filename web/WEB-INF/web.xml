@@ -76,6 +76,18 @@
         <servlet-name>DeletarMoradorServlet</servlet-name>
         <servlet-class>View.DeletarMoradorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VisualizarSolicitacaoServlet</servlet-name>
+        <servlet-class>View.VisualizarSolicitacaoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarSolicitacaoServlet</servlet-name>
+        <servlet-class>View.CadastrarSolicitacaoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarSolicitacaoServlet</servlet-name>
+        <servlet-class>View.DeletarSolicitacaoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -151,6 +163,18 @@
     <servlet-mapping>
         <servlet-name>DeletarMoradorServlet</servlet-name>
         <url-pattern>/DeletarMorador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarSolicitacaoServlet</servlet-name>
+        <url-pattern>/VisualizarSolicitacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarSolicitacaoServlet</servlet-name>
+        <url-pattern>/CadastrarSolicitacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarSolicitacaoServlet</servlet-name>
+        <url-pattern>/DeletarSolicitacao</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

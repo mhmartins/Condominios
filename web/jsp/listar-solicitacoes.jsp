@@ -1,7 +1,7 @@
 <%-- 
-    Document   : listar-morador
-    Created on : 23/06/2016, 23:16:29
-    Author     : prisl
+    Document   : listar-solicitacoes
+    Created on : 24/06/2016, 15:56:49
+    Author     : prisley.costa
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +29,8 @@
                     <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
                     <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
-                    <li class="active"><a href="MoradorInicio">Cadastrar Morador</a></li>
+                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                    <li class="active"><a href="VisualizarSolicitacao">Solicitações</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
@@ -37,20 +38,26 @@
         </nav>
 
         <div class="container">
-            <h2>Moradores Cadastrados</h2>
+            <h2>Solicitações cadastradas</h2>
             <table class="table">
                 <tr class="text-primary">
-                    <td>Nome</td>
-                    <td>Apartamento</td>
-                    <td>Editar</td>
-                    <td>Remover</td>
+                    <td>Titulo:</td>
+                    <td>Texto Solicitação:</td>
+                    <td>Morador:</td>
+                    <td>Status:</td>
+                    <td>Data Abertura:</td>
+                    <td>Responder:</td>
+                    <td>Deletar Solicitação:</td>
                 </tr>
-                <c:forEach items="${moradores}" var="m">
+                <c:forEach items="${solicitacoes}" var="s">
                     <tr>
-                        <td>${m.login}</td>
-                        <td>${m.numApt}</td>
-                        <td><a href="EditarMorador?id=${m.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
-                        <td><a href="DeletarMorador?id=${m.id}"><img src="img/delete.png" width="20" height="20"/></a></td>
+                        <td>${s.titulo}</td>
+                        <td>${s.texto}</td>
+                        <td>${s.morador.login}</td>
+                        <td>${s.status}</td>
+                        <td>${s.dataAbertura}</td>
+                        <td><a href="     ?id=${s.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
+                        <td><a href="     ?id=${s.id}"><img src="img/delete.png" width="20" height="20"/></a></td>
                     </tr>
                 </c:forEach>
             </table>
