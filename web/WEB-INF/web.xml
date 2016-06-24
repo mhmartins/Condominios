@@ -109,10 +109,6 @@
         <url-pattern>/AdicionarMural</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>VisualizarMuralServlet</servlet-name>
-        <url-pattern>/VisualizarMural</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LogoffServlet</servlet-name>
         <url-pattern>/Logoff</url-pattern>
     </servlet-mapping>
