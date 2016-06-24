@@ -15,6 +15,6 @@ import java.util.List;
 public interface IInformacaoDAO {
     
     List<Informacao> getInformacoesAtivas();
-    boolean cadastraInformacao();
+    boolean cadastraInformacao(Informacao informacao);
     
 }

@@ -5,6 +5,9 @@
  */
 package View;
 
+import BC.MuralInformacaoBC;
+import Model.Informacao;
+import Model.Morador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -25,6 +28,23 @@ public class AdicionarMuralServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        Informacao informacao = new Informacao();
+        informacao.setTitulo(request.getParameter("titulo"));
+        informacao.setInformacao(request.getParameter("informacao"));
+        informacao.setMorador((Morador)request.getSession().getAttribute("morador"));
+        
+        RequestDispatcher rd;
+        if(MuralInformacaoBC.getInstance().cadastraInformacao(informacao)){
+            rd = request.getRequestDispatcher("jsp/mural-inicio.jsp");
+        }else {
+            rd = request.getRequestDispatcher("jsp/adicionar-mural.jsp");
+        }
+        
+        rd.forward(request, response);
+        
+        
+        
 
     }
 }

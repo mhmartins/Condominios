@@ -6,6 +6,7 @@
 package BC;
 
 import DAO.InformacaoDAO;
+import Exception.BcException;
 import Interfaces.IInformacaoDAO;
 import Model.Informacao;
 import java.util.List;
@@ -31,8 +32,16 @@ public class InformacaoBC implements IInformacaoDAO{
     }
 
     @Override
-    public boolean cadastraInformacao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean cadastraInformacao(Informacao informacao) {
+        if(informacao.getInformacao() == null || informacao.getInformacao().trim().isEmpty()){
+            throw new BcException("Informação inválida");
+        }else if(informacao.getTitulo() == null || informacao.getTitulo().trim().isEmpty()){
+            throw new BcException("Informação inválida");
+        }else if(informacao.getMorador() == null || informacao.getMorador().getId() < 0){
+            throw new BcException("Morador inválido");
+        }else {
+            return InformacaoDAO.getInstance().cadastraInformacao(informacao);
+        }
     }
     
 }

@@ -41,9 +41,10 @@ public class JdbcInformacaoDAO implements IInformacaoDAO{
                 + " FROM "
                 + "     Informacao inf "
                 + "INNER JOIN "
-                + "     Morador mor ON mor.id = inf.id_morador"
-                + "WHERE "
-                + "     inf.status = 'A'";
+                + "     Morador mor ON mor.id = inf.id_morador "
+                + " WHERE "
+                + "     inf.status = 'A' order by inf.id desc limit 10"
+                + "";
         
         ps = connection.prepareCall(sql);
         rs = ps.executeQuery();
@@ -53,13 +54,28 @@ public class JdbcInformacaoDAO implements IInformacaoDAO{
         }
         return informacoes;
         }catch(SQLException e){
-            throw new DaoException("Erro com o banco de dados, tente novamente");
+            throw new DaoException("Erro com o banco de dados, tente novamente"+e.getMessage());
         }
     }
 
     @Override
-    public boolean cadastraInformacao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean cadastraInformacao(Informacao informacao) {
+        try {
+            PreparedStatement ps;
+            String sql = "INSERT INTO Informacao (titulo,informacao,id_morador) VALUES (?,?,?)";
+            ps = connection.prepareCall(sql);
+            ps.setString(1, informacao.getTitulo());
+            ps.setString(2, informacao.getInformacao());
+            ps.setInt(3,informacao.getMorador().getId());
+            if(ps.executeUpdate() == 1){
+                return true;
+            }else {
+                return false;
+            }
+        }catch(SQLException e){
+            throw new DaoException("Erro com o banco de dados, tente novamente");
+        }
+       
     }
     
     public Informacao populateInformacao(ResultSet rs) throws SQLException{

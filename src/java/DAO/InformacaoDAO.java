@@ -34,8 +34,11 @@ public class InformacaoDAO implements IInformacaoDAO{
     }
 
     @Override
-    public boolean cadastraInformacao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean cadastraInformacao(Informacao informacao) {
+        IDaoManager iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IInformacaoDAO informacaoDAO = iManager.getInformacaoDAO();
+        return informacaoDAO.cadastraInformacao(informacao);
     }
     
 }

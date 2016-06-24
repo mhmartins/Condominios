@@ -1,7 +1,7 @@
 <%-- 
-    Document   : mural-inicio
-    Created on : 23/06/2016, 12:49:23
-    Author     : desenvolvimento
+    Document   : listar-mural
+    Created on : 23/06/2016, 20:13:13
+    Author     : Tobias
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,10 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
               <div class="navbar-header">
@@ -32,13 +31,6 @@
               </div><!--/.nav-collapse -->
           </div>
         </nav>
-        <div class="container">
-        
-            <center>
-            <a href="AdicionarMural"><button class="btn btn-lg btn-primary">Adicionar Informação</button></a>
-            <a href="VisualizarMural"><button class="btn btn-lg btn-primary">Abrir Mural</button></a>
-        </center>
-    </div>
-
+        <%@include file="mural-comunicacao.jsp" %>
     </body>
 </html>

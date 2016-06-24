@@ -2,8 +2,10 @@
 package View;
 
 import BC.MoradorBC;
+import BC.MuralInformacaoBC;
 import Model.Enum.TipoMorador;
 import Model.Morador;
+import Model.MuralInformacoes;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,11 +34,8 @@ public class PrincipalServlet extends HttpServlet {
         }else {
             rd = request.getRequestDispatcher("jsp/Inicio.jsp");
         }
-        
+       
         rd.forward(request, response);
-        
-        
-        
     }
    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,12 +53,15 @@ public class PrincipalServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
             }
             
-            rd.forward(request, response);
+           
         }else {
             rd = request.getRequestDispatcher("jsp/Inicio.jsp");
-            rd.forward(request, response);
+            
         }
         
+        MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
+        request.setAttribute("mural", mural);
+        rd.forward(request, response);
         
     }
 
