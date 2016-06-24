@@ -53,8 +53,8 @@
         <servlet-class>View.AdicionarMuralServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>VisualizarMuralServlet</servlet-name>
-        <servlet-class>View.VisualizarMuralServlet</servlet-class>
+        <servlet-name>LogoffServlet</servlet-name>
+        <servlet-class>View.LogoffServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
@@ -111,6 +111,10 @@
     <servlet-mapping>
         <servlet-name>VisualizarMuralServlet</servlet-name>
         <url-pattern>/VisualizarMural</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoffServlet</servlet-name>
+        <url-pattern>/Logoff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
