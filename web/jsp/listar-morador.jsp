@@ -49,7 +49,7 @@
                         <td>${m.login}</td>
                         <td>${m.numApt}</td>
                         <td><a href="EditarMorador?id=${m.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
-                        <td><a href="?id=${m.id}"><img src="img/delete.png" width="20" height="20"/></a></td>
+                        <td><a href="DeletarMorador?id=${m.id}"><img src="img/delete.png" width="20" height="20"/></a></td>
                     </tr>
                 </c:forEach>
             </table>

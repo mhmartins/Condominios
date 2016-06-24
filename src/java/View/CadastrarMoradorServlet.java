@@ -40,13 +40,11 @@ public class CadastrarMoradorServlet extends HttpServlet {
         morador.setSenha(request.getParameter("senha"));
         morador.setTipoMorador(TipoMorador.CONDOMINO);
         RequestDispatcher rd;
-        if (MoradorBC.getInstance().cadastrarMorador(morador)) {
-            MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
-            request.setAttribute("mural", mural);
-            rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
-        } else {
-            rd = request.getRequestDispatcher("jsp/cadastrar-morador.jsp");
-        }
+        MoradorBC.getInstance().cadastrarMorador(morador);
+        MuralInformacoes mural = MuralInformacaoBC.getInstance().getMuralInformacao();
+        request.setAttribute("mural", mural);
+        rd = request.getRequestDispatcher("jsp/morador-inicio.jsp");
+
         rd.forward(request, response);
     }
 }

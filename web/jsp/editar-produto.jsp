@@ -43,7 +43,9 @@
                 <input type="text" name="descricao" id="descricao" class="form-control" value="${produto.descricao}"/>
                 <h4>Quantidade</h4>
                 <input type="number" name="quantidade" id="quantidade" class="form-control width40" value="${produto.quantidade}"/>
-                <input type="hidden" name="id" id="id" value="${produto.quantidade}"/>
+                <!--TOBIAS, NA LINHA DE BAIXO ALTEREI DE "produto.quantidade" PARA "produto.id", DA FORMA
+                QUE ESTAVA ANTES, ELE PEGAVA COMO ID A QUANTIDADE, DAÍ FAZIA TUDO ERRADO-->
+                <input type="hidden" name="id" id="id" value="${produto.id}"/>
                 <br /><input type="submit" value="Atualizar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
                 
             </form>

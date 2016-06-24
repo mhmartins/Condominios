@@ -25,10 +25,10 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
-                    <li class="active"><a href="Estoque">Controle de Estoque</a></li>
+                    <li><a href="Estoque">Controle de Estoque</a></li>
                     <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                    <li class="active"><a href="MoradorInicio">Cadastrar Morador</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
@@ -40,9 +40,9 @@
                 <h4>Login:</h4>
                 <input type="text" name="login" id="nome" class="form-control" value="${morador.login}"/>
                 <h4>Senha:</h4>
-                <input type="password" name="senha" id="descricao" class="form-control" value="${morador.senha}"/>
+                <input type="password" name="senha" id="senha" class="form-control" value="${morador.senha}"/>
                 <h4>Numero Apartamento:</h4>
-                <input type="number" name="numApt" id="quantidade" class="form-control width40" value="${morador.numApt}"/>
+                <input type="number" name="numApt" id="numApt" class="form-control width40" value="${morador.numApt}"/>
                 <input type="hidden" name="id" id="id" value="${morador.id}"/>
                 <br /><input type="submit" value="Atualizar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
                 

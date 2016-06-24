@@ -58,7 +58,6 @@ public class JdbcMoradorDAO implements IMoradorDAO {
         }
         morador.setNumApt(rs.getInt("Apartamento"));
         morador.setId(rs.getInt("id"));
-
     }
 
     @Override
@@ -101,8 +100,9 @@ public class JdbcMoradorDAO implements IMoradorDAO {
                     + "Senha, "
                     + "Apartamento, "
                     + "Tipo "
-                    + "from Morador "
-                    + "where Tipo = 'C'";
+                    + "FROM Morador "
+                    + "WHERE Tipo = 'C' "
+                    + "ORDER BY Login";
 
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -154,7 +154,6 @@ public class JdbcMoradorDAO implements IMoradorDAO {
         try {
             String sql = "UPDATE Morador SET Login = ?, Senha = ?, Apartamento = ? WHERE Id = ?";
             PreparedStatement ps;
-            ResultSet rs;
             ps = connection.prepareStatement(sql);
             ps.setString(1, morador.getLogin());
             ps.setString(2, morador.getSenha());
@@ -166,7 +165,6 @@ public class JdbcMoradorDAO implements IMoradorDAO {
             } else {
                 return false;
             }
-
         } catch (SQLException ex) {
             throw new DaoException("Erro com o banco de dados, tente novamente " + ex.getMessage());
         }
@@ -175,9 +173,8 @@ public class JdbcMoradorDAO implements IMoradorDAO {
     @Override
     public boolean deleteMoradorById(int id) {
         try {
-            String sql = "DELETE Morador WHERE Id = ?";
+            String sql = "DELETE FROM Morador WHERE Id = ?";
             PreparedStatement ps;
-            ResultSet rs;
             ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
 
@@ -186,7 +183,6 @@ public class JdbcMoradorDAO implements IMoradorDAO {
             } else {
                 return false;
             }
-
         } catch (SQLException ex) {
             throw new DaoException("Erro com o banco de dados, tente novamente " + ex.getMessage());
         }

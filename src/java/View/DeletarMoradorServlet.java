@@ -5,8 +5,11 @@
  */
 package View;
 
+import BC.MoradorBC;
+import Model.Morador;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,12 +24,21 @@ public class DeletarMoradorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        int id = Integer.valueOf(request.getParameter("id"));
+        PrintWriter out = response.getWriter();
+        
+        MoradorBC.getInstance().deleteMoradorById(id);
+        
+        RequestDispatcher rd;
+        rd = request.getRequestDispatcher("jsp/morador-inicio.jsp");
+        out.println("<script type=\"text/javascript\">alert('Morador deletado com Sucesso!')</script>");
+        rd.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
     }
 }

@@ -41,16 +41,9 @@ public class EditarMoradorServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         RequestDispatcher rd;
-        if(MoradorBC.getInstance().updateMorador(morador)){
-            rd = request.getRequestDispatcher("jsp/morador-inicio.jsp");
-            out.println("<script type=\"text/javascript\">alert('Morador atualizado com Sucesso!')</script>");
-        }else {
-            rd = request.getRequestDispatcher("jsp/editar-morador.jsp");
-            morador = MoradorBC.getInstance().getMoradorById(Integer.valueOf(request.getParameter("id")));
-            request.setAttribute("morador", morador);
-            out.println("<script type=\"text/javascript\">alert('Morador atualizado com Sucesso!')</script>");
-        }
-        out.close();
+        MoradorBC.getInstance().updateMorador(morador);
+        rd = request.getRequestDispatcher("jsp/morador-inicio.jsp");
+
         rd.forward(request, response);
     }
 }
