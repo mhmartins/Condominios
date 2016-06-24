@@ -1,16 +1,16 @@
 <%-- 
-    Document   : listar-morador
-    Created on : 23/06/2016, 23:16:29
+    Document   : editar-morador
+    Created on : 24/06/2016, 00:19:43
     Author     : prisl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listagem de Moradores</title>
+        <title>JSP Page</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -25,34 +25,29 @@
                 <div id="navbar" class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
-                    <li><a href="Estoque">Controle de Estoque</a></li>
+                    <li class="active"><a href="Estoque">Controle de Estoque</a></li>
                     <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li class="active"><a href="MoradorInicio">Cadastrar Morador</a></li>
+                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-
-        <div class="container">
-            <h2>Moradores Cadastrados</h2>
-            <table class="table">
-                <tr class="text-primary">
-                    <td>Nome</td>
-                    <td>Apartamento</td>
-                    <td>Editar</td>
-                    <td>Remover</td>
-                </tr>
-                <c:forEach items="${moradores}" var="m">
-                    <tr>
-                        <td>${m.login}</td>
-                        <td>${m.numApt}</td>
-                        <td><a href="EditarMorador?id=${m.id}"><img src="img/edit.png" width="20" height="20"/></a></td>
-                        <td><a href="?id=${m.id}"><img src="img/delete.png" width="20" height="20"/></a></td>
-                    </tr>
-                </c:forEach>
-            </table>
+        <!-- ALTERAR ESSE CARA -->
+        <div class="container" style="width:40%">
+            <form action="EditarMorador" method="POST">                
+                <h4>Login:</h4>
+                <input type="text" name="login" id="nome" class="form-control" value="${morador.login}"/>
+                <h4>Senha:</h4>
+                <input type="password" name="senha" id="descricao" class="form-control" value="${morador.senha}"/>
+                <h4>Numero Apartamento:</h4>
+                <input type="number" name="numApt" id="quantidade" class="form-control width40" value="${morador.numApt}"/>
+                <input type="hidden" name="id" id="id" value="${morador.id}"/>
+                <br /><input type="submit" value="Atualizar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
+                
+            </form>
+            
         </div>
     </body>
 </html>

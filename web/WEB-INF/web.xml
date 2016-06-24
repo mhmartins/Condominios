@@ -72,6 +72,10 @@
         <servlet-name>EditarMoradorServlet</servlet-name>
         <servlet-class>View.EditarMoradorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletarMoradorServlet</servlet-name>
+        <servlet-class>View.DeletarMoradorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>EditarMoradorServlet</servlet-name>
         <url-pattern>/EditarMorador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarMoradorServlet</servlet-name>
+        <url-pattern>/DeletarMorador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

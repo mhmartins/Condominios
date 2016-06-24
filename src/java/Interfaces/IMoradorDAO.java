@@ -19,4 +19,5 @@ public interface IMoradorDAO {
     List<Morador> visualizarMoradores();
     Morador getMoradorById(int id);
     boolean updateMorador(Morador morador);
+    boolean deleteMoradorById(int id);
 }

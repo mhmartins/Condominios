@@ -24,7 +24,7 @@ public class EditarMoradorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/editar-produto.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/editar-morador.jsp");
         Morador morador = MoradorBC.getInstance().getMoradorById(Integer.valueOf(request.getParameter("id")));
         request.setAttribute("morador", morador);
         rd.forward(request, response);
@@ -35,20 +35,20 @@ public class EditarMoradorServlet extends HttpServlet {
             throws ServletException, IOException {
         Morador morador = new Morador();
         morador.setId(Integer.valueOf(request.getParameter("id")));
-        morador.setLogin(request.getParameter("nome"));
-        morador.setSenha(request.getParameter("descricao"));
-        morador.setNumApt(Integer.valueOf(request.getParameter("quantidade")));
+        morador.setLogin(request.getParameter("login"));
+        morador.setNumApt(Integer.valueOf(request.getParameter("numApt")));
+        morador.setSenha(request.getParameter("senha"));
         PrintWriter out = response.getWriter();
         
         RequestDispatcher rd;
         if(MoradorBC.getInstance().updateMorador(morador)){
-            rd = request.getRequestDispatcher("jsp/estoque-inicio.jsp");
-            out.println("<script type=\"text/javascript\">alert('Produto atualizado com Sucesso!')</script>");
+            rd = request.getRequestDispatcher("jsp/morador-inicio.jsp");
+            out.println("<script type=\"text/javascript\">alert('Morador atualizado com Sucesso!')</script>");
         }else {
-            rd = request.getRequestDispatcher("jsp/editar-produto.jsp");
+            rd = request.getRequestDispatcher("jsp/editar-morador.jsp");
             morador = MoradorBC.getInstance().getMoradorById(Integer.valueOf(request.getParameter("id")));
-            request.setAttribute("produto", morador);
-            out.println("<script type=\"text/javascript\">alert('Produto atualizado com Sucesso!')</script>");
+            request.setAttribute("morador", morador);
+            out.println("<script type=\"text/javascript\">alert('Morador atualizado com Sucesso!')</script>");
         }
         out.close();
         rd.forward(request, response);

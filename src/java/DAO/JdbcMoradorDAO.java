@@ -122,29 +122,30 @@ public class JdbcMoradorDAO implements IMoradorDAO {
         morador.setLogin(rs.getString("Login"));
         morador.setNumApt(rs.getInt("Apartamento"));
         morador.setSenha(rs.getString("Senha"));
-        if(TipoMorador.CONDOMINO.getTipo() == rs.getString("Tipo").charAt(0) ){
+        if (TipoMorador.CONDOMINO.getTipo() == rs.getString("Tipo").charAt(0)) {
             morador.setTipoMorador(TipoMorador.CONDOMINO);
         }
         return morador;
-        
+
     }
 
     @Override
     public Morador getMoradorById(int id) {
-       try {
+        try {
             Morador morador = null;
-            String sql = "SELECT * FROM Produto";
+            String sql = "SELECT * FROM Morador WHERE Id = ?";
             PreparedStatement ps;
             ResultSet rs;
             ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
-            if(rs.next()){    
+            if (rs.next()) {
                 morador = populateMorador(rs);
             }
             return morador;
-            
+
         } catch (SQLException ex) {
-            throw new DaoException("Erro com o banco de dados, tente novamente "+ex.getMessage());
+            throw new DaoException("Erro com o banco de dados, tente novamente " + ex.getMessage());
         }
     }
 
@@ -158,15 +159,36 @@ public class JdbcMoradorDAO implements IMoradorDAO {
             ps.setString(1, morador.getLogin());
             ps.setString(2, morador.getSenha());
             ps.setInt(3, morador.getNumApt());
-            
-            if (ps.executeUpdate() == 1){
+            ps.setInt(4, morador.getId());
+
+            if (ps.executeUpdate() == 1) {
                 return true;
             } else {
                 return false;
             }
-            
+
         } catch (SQLException ex) {
             throw new DaoException("Erro com o banco de dados, tente novamente " + ex.getMessage());
-        }        
+        }
+    }
+
+    @Override
+    public boolean deleteMoradorById(int id) {
+        try {
+            String sql = "DELETE Morador WHERE Id = ?";
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            if (ps.executeUpdate() == 1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (SQLException ex) {
+            throw new DaoException("Erro com o banco de dados, tente novamente " + ex.getMessage());
+        }
     }
 }

@@ -55,12 +55,29 @@ public class MoradorDAO implements IMoradorDAO{
 
     @Override
     public Morador getMoradorById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IMoradorDAO moradorDAO = iManager.getMoradorDAO();
+        return moradorDAO.getMoradorById(id);
     }
 
     @Override
     public boolean updateMorador(Morador morador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IMoradorDAO moradorDAO = iManager.getMoradorDAO();
+        return moradorDAO.updateMorador(morador);
+    }
+
+    @Override
+    public boolean deleteMoradorById(int id) {
+        IDaoManager iManager;
+        iManager = new JdbcDaoManager();
+        iManager.iniciar();
+        IMoradorDAO moradorDAO = iManager.getMoradorDAO();
+        return moradorDAO.deleteMoradorById(id);
     }
     
 }
