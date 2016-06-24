@@ -52,6 +52,10 @@
         <servlet-name>AdicionarMuralServlet</servlet-name>
         <servlet-class>View.AdicionarMuralServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoffServlet</servlet-name>
+        <servlet-class>View.LogoffServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>AdicionarMuralServlet</servlet-name>
         <url-pattern>/AdicionarMural</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoffServlet</servlet-name>
+        <url-pattern>/Logoff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
