@@ -31,12 +31,10 @@ public class SolicitacaoBC implements ISolicitacao {
     public boolean cadastrarSolicitacao(Solicitacao solicitacao) {
         if (solicitacao == null) {
             throw new BcException("Objeto Solicitacao nulo");
-        } else if (solicitacao.getStatus().equals("")) {
+        } else if (solicitacao.getStatus() != 0) {
             throw new BcException("Status solicitacao esta em branco");
-        } else if (solicitacao.getTexto().equals("")) {
-            throw new BcException("Texto solicitacao esta em branco");
-        } else if (solicitacao.getTitulo().equals("")) {
-            throw new BcException("Titulo solicitacao esta em branco");
+        } else if (solicitacao.getMensagens().isEmpty()) {
+            throw new BcException("solicitacao sem mensagens");
         } else if (solicitacao.getDataAbertura() == null) {
             throw new BcException("Nao foi preenchido a data de abertura da solicitacao");
         } else {

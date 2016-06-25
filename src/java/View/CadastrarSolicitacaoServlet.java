@@ -6,6 +6,7 @@
 package View;
 
 import BC.SolicitacaoBC;
+import Model.Mensagem;
 import Model.Morador;
 import Model.Solicitacao;
 import java.io.IOException;
@@ -39,14 +40,19 @@ public class CadastrarSolicitacaoServlet extends HttpServlet {
         solic = new Solicitacao();
 
         solic.setMorador(morador);
-        solic.setTexto(request.getParameter("texto"));
-        solic.setTitulo(request.getParameter("titulo"));
-        solic.setStatus("Aberto"); //mudar isso para um int para determinar o status
+        solic.setStatus(1); //mudar isso para um int para determinar o status
         solic.setDataAbertura(new Date());
+        
+        Mensagem msg;
+        msg = new Mensagem(solic);
+        msg.setMorador(morador);
+        msg.setTexto(request.getParameter("texto"));
+        msg.setTitulo(request.getParameter("titulo"));
 
         RequestDispatcher rd;
 
         SolicitacaoBC.getInstance().cadastrarSolicitacao(solic);
+        
         rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
         rd.forward(request, response);
     }
