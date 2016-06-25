@@ -6,6 +6,7 @@
 package Model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -13,8 +14,7 @@ import java.util.Date;
  */
 public class Solicitacao {
     private int id;
-    private String titulo;
-    private String texto;
+    private List<Mensagem> mensagens;
     private Morador morador;
     private Date dataAbertura;
     private Date dataFinalizado;
@@ -31,23 +31,7 @@ public class Solicitacao {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
+    
     public Morador getMorador() {
         return morador;
     }
@@ -78,6 +62,14 @@ public class Solicitacao {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<Mensagem> getMensagens() {
+        return mensagens;
+    }
+
+    public void setMensagens(List<Mensagem> mensagens) {
+        this.mensagens = mensagens;
     }
 
     

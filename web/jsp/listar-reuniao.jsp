@@ -27,6 +27,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="Principal">Inicio</a></li>
                         <li><a href="ReuniaoInicio">Agendar Reuniao</a></li>
+                        <li><a href="CadastrarSolicitacao">Cadastrar Solicitação</a></li>
                         <li><a href="Logoff">Logoff</a></li>
                     </ul>
                 </div>
