@@ -42,7 +42,7 @@ public class CadastrarSolicitacaoServlet extends HttpServlet {
         solic.setMorador(morador);
         solic.setStatus(1); //mudar isso para um int para determinar o status
         solic.setDataAbertura(new Date());
-        
+
         Mensagem msg;
         msg = new Mensagem(solic);
         msg.setMorador(morador);
@@ -52,7 +52,7 @@ public class CadastrarSolicitacaoServlet extends HttpServlet {
         RequestDispatcher rd;
 
         SolicitacaoBC.getInstance().cadastrarSolicitacao(solic);
-        
+
         rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
         rd.forward(request, response);
     }

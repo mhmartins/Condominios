@@ -17,7 +17,6 @@ public class Mensagem {
     private Morador morador;
     private Solicitacao solicitacao;
     
-
     public Mensagem(Solicitacao solicitacao) {
         solicitacao.getMensagens().add(this);
     }

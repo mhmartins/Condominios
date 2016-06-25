@@ -61,6 +61,5 @@ public class SolicitacaoBC implements ISolicitacao {
     public boolean deleteSolicitacaoById(int id) {
         return SolicitacaoDAO.getInstance().deleteSolicitacaoById(id);
     }
-    
-    
+
 }
