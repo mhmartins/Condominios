@@ -10,6 +10,7 @@ import DAO.JdbcAgendamentoDAO;
 import DAO.JdbcAreaDAO;
 import DAO.JdbcFuncionarioDAO;
 import DAO.JdbcInformacaoDAO;
+import DAO.JdbcMensagemDAO;
 import DAO.JdbcMoradorDAO;
 import DAO.JdbcProdutoDAO;
 import DAO.JdbcReuniaoDAO;
@@ -34,4 +35,5 @@ public interface IDaoManager {
     JdbcFuncionarioDAO getFuncionarioDAO();
     JdbcSolicitacaoDAO getSolicitacaoDAO();
     JdbcAcrescimoDAO getAcrescimoDAO();
+    JdbcMensagemDAO getMensagemDAO();
 }

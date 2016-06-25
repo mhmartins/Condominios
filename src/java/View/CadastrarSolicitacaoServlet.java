@@ -53,7 +53,7 @@ public class CadastrarSolicitacaoServlet extends HttpServlet {
 
         SolicitacaoBC.getInstance().cadastrarSolicitacao(solic);
 
-        rd = request.getRequestDispatcher("jsp/painel-sindico.jsp");
+        rd = request.getRequestDispatcher("jsp/painel-condomino.jsp");
         rd.forward(request, response);
     }
 }
