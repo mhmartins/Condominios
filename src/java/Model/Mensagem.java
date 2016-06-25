@@ -16,6 +16,7 @@ public class Mensagem {
     private String texto;
     private Morador morador;
     private Solicitacao solicitacao;
+    
 
     public Mensagem(Solicitacao solicitacao) {
         solicitacao.getMensagens().add(this);
