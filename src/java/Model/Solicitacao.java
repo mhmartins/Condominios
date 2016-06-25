@@ -18,7 +18,7 @@ public class Solicitacao {
     private Morador morador;
     private Date dataAbertura;
     private Date dataFinalizado;
-    private String status;
+    private int status;
 
     public Solicitacao() {
 
@@ -56,11 +56,11 @@ public class Solicitacao {
         this.dataFinalizado = dataFinalizado;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

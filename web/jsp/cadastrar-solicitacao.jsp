@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro Solicitação</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+        <script>tinymce.init({selector: 'textarea'});</script>
     </head>
     <body>
         <!-- -->
@@ -35,13 +37,9 @@
         <div class="container" style="width:40%">
             <form action="" method="POST">                
                 <h4>Titulo:</h4>
-                <input type="text" name="assunto" id="assunto" class="form-control"/>
+                <input type="text" name="titulo" id="titulo" class="form-control"/>
                 <h4>Mensagem:</h4>
-                <input type="text" name="pauta" id="pauta" class="form-control"/>
-                <h4>Data da Reunião:</h4>
-                <input type="date" name="dataReuniao" id="dataReuniao" class="form-control"/>
-                <h4>Hora Reunião</h4>
-                <input type="time" name="horaReuniao" id="horaReuniao" class="form-control"/>
+                <textarea rows="5" cols="50" name="texto" form=""></textarea>
                 <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
             </form>
         </div>
