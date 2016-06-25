@@ -31,7 +31,7 @@ public class SolicitacaoBC implements ISolicitacao {
     public boolean cadastrarSolicitacao(Solicitacao solicitacao) {
         if (solicitacao == null) {
             throw new BcException("Objeto Solicitacao nulo");
-        } else if (solicitacao.getStatus() != 0) {
+        } else if (solicitacao.getStatus() == 0) {
             throw new BcException("Status solicitacao esta em branco");
         } else if (solicitacao.getMensagens().isEmpty()) {
             throw new BcException("solicitacao sem mensagens");

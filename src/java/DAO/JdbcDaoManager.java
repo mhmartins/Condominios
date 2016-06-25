@@ -65,6 +65,7 @@ public class JdbcDaoManager implements IDaoManager{
         informacaoDAO = new JdbcInformacaoDAO(connection);
         funcionarioDAO = new JdbcFuncionarioDAO(connection);
         acrescimoDAO = new JdbcAcrescimoDAO(connection);
+        solicitacaoDAO = new JdbcSolicitacaoDAO(connection);
         
     }
 

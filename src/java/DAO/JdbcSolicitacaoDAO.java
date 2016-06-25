@@ -34,7 +34,7 @@ public class JdbcSolicitacaoDAO implements ISolicitacao {
                     + "id_morador, "
                     + "status, "
                     + "dataAbertura) "
-                    + "VALUES (?, ?, ?, ?)";
+                    + "VALUES (?, ?, ?)";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, solicitacao.getMorador().getId());
             ps.setInt(2, solicitacao.getStatus());
@@ -51,23 +51,24 @@ public class JdbcSolicitacaoDAO implements ISolicitacao {
         }
     }
 
-    @Override
-    public List<Solicitacao> getSolicitacoes() {
-        //sql
-    }
 
     @Override
     public Morador getMoradorById(int id) {
-        //sql
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean responderSolicitacao() {
-        //sql
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean deleteSolicitacaoById(int id) {
-        //sql
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Solicitacao> getSolicitacoes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
