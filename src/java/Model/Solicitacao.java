@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Solicitacao {
     private int status;
 
     public Solicitacao() {
-
+        this.mensagens = new ArrayList<Mensagem>();
     }
 
     public int getId() {

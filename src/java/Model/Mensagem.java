@@ -19,6 +19,7 @@ public class Mensagem {
     
     public Mensagem(Solicitacao solicitacao) {
         solicitacao.getMensagens().add(this);
+        this.solicitacao = solicitacao;
     }
 
     public int getId() {
