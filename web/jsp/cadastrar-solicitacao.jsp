@@ -39,7 +39,7 @@
                 <h4>Titulo:</h4>
                 <input type="text" name="titulo" id="titulo" class="form-control"/>
                 <h4>Mensagem:</h4>
-                <textarea rows="5" cols="50" name="texto" form=""></textarea>
+                <textarea rows="5" cols="50" name="texto" id="texto"></textarea>
                 <br /><input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block width40 center-block"/>
             </form>
         </div>
