@@ -4,6 +4,7 @@
     Author     : desenvolvimento
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,11 +26,14 @@
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
                     <li class="active"><a href="Estoque">Controle de Estoque</a></li>
-                    <li><a href="AreasComuns">Áreas Comuns</a></li>
-                    <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
-                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
-                    <li><a href="VisualizarSolicitacao">Solicitações</a></li>
+                    <c:if test="${empty funcionario}">
+                        <li><a href="AreasComuns">Áreas Comuns</a></li>
+                        <li><a href="Mural">Mural de Comunicação</a></li>
+                        <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
+                        <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                        <li><a href="VisualizarSolicitacao">Solicitações</a></li>
+                    </c:if>
+                    
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
@@ -38,7 +42,9 @@
 
         <div class="container">
             <center>
-                <a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
+                <c:if test="${empty funcionario}">
+                    <a href="CadastrarProduto"><button class="btn btn-lg btn-primary">Cadastrar Produtos</button></a>
+                </c:if>
                 <a href="ListarEstoque"><button class="btn btn-lg btn-primary">Visualizar Estoque</button></a>
             </center>
         </div>

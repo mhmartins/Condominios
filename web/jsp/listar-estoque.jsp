@@ -27,10 +27,13 @@
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
                     <li class="active"><a href="Estoque">Controle de Estoque</a></li>
-                    <li><a href="AreasComuns">Áreas Comuns</a></li>
-                    <li><a href="Mural">Mural de Comunicação</a></li>
-                    <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
-                    <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                     <c:if test="${empty funcionario}">
+                        <li><a href="AreasComuns">Áreas Comuns</a></li>
+                        <li><a href="Mural">Mural de Comunicação</a></li>
+                        <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
+                        <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                        <li><a href="VisualizarSolicitacao">Solicitações</a></li>
+                    </c:if>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
