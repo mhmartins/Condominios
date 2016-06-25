@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import DAO.JdbcAcrescimoDAO;
 import DAO.JdbcAgendamentoDAO;
 import DAO.JdbcAreaDAO;
 import DAO.JdbcFuncionarioDAO;
@@ -32,4 +33,5 @@ public interface IDaoManager {
     JdbcInformacaoDAO getInformacaoDAO();
     JdbcFuncionarioDAO getFuncionarioDAO();
     JdbcSolicitacaoDAO getSolicitacaoDAO();
+    JdbcAcrescimoDAO getAcrescimoDAO();
 }
