@@ -39,6 +39,7 @@ public class JdbcDaoManager implements IDaoManager{
     private JdbcSolicitacaoDAO solicitacaoDAO;
     private JdbcAcrescimoDAO acrescimoDAO;
     private JdbcMensagemDAO mensagemDAO;
+    private JdbcControleFinanceiroDAO controleDAO;
     
     
     public JdbcDaoManager(){
@@ -68,6 +69,7 @@ public class JdbcDaoManager implements IDaoManager{
         acrescimoDAO = new JdbcAcrescimoDAO(connection);
         solicitacaoDAO = new JdbcSolicitacaoDAO(connection);
         mensagemDAO = new JdbcMensagemDAO(connection);
+        controleDAO = new JdbcControleFinanceiroDAO(connection);
         
     }
 
@@ -178,6 +180,14 @@ public class JdbcDaoManager implements IDaoManager{
             iniciar();
         }
         return mensagemDAO;
+    }
+
+    @Override
+    public JdbcControleFinanceiroDAO getControleFinanceiroDAO() {
+        if(controleDAO == null){
+            iniciar();
+        }
+        return controleDAO;
     }
 
 }

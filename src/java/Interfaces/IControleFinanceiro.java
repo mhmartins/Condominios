@@ -5,13 +5,16 @@
  */
 package Interfaces;
 
+import Model.Morador;
+import java.util.List;
+
 /**
  *
  * @author Tobias
  */
 public interface IControleFinanceiro {
     
-    boolean gerarBoleto();
+    boolean gerarBoleto(List<Morador> moradores);
     
     
 }

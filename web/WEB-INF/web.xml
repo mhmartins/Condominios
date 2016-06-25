@@ -100,6 +100,14 @@
         <servlet-name>VisualizarAcrescimoServlet</servlet-name>
         <servlet-class>View.VisualizarAcrescimoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletarAcrescimoServlet</servlet-name>
+        <servlet-class>View.DeletarAcrescimoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GerarBoletoServlet</servlet-name>
+        <servlet-class>View.GerarBoletoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -199,6 +207,14 @@
     <servlet-mapping>
         <servlet-name>VisualizarAcrescimoServlet</servlet-name>
         <url-pattern>/VisualizarAcrescimo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarAcrescimoServlet</servlet-name>
+        <url-pattern>/DeletarAcrescimo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GerarBoletoServlet</servlet-name>
+        <url-pattern>/GerarBoleto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

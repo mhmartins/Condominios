@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
 
 import Exception.DaoException;
@@ -15,10 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Tobias
- */
 public class JdbcAcrescimoDAO implements IAcrescimoDAO {
     
     private Connection connection;
@@ -45,12 +36,11 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
             throw new DaoException("Problema com o banco de dados, tente novamente");
         }
     }
-
+    
     @Override
     public List<Acrescimo> getAcrescimos() {
          try {
             List<Acrescimo> acrescimos = new ArrayList<Acrescimo>();
-                    
             PreparedStatement ps;
             ResultSet rs;
             String sql = "SELECT * FROM Acrescimo WHERE status = 'A'";
@@ -69,7 +59,7 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
     public boolean removerAcrescimo(Acrescimo acrescimo) {
         try {
             PreparedStatement ps;
-            String sql = "UPDATE Acrescimo SET status = 'I'WHERE id = ?";
+            String sql = "UPDATE Acrescimo SET status = 'I' WHERE id = ?";
             ps = connection.prepareStatement(sql);
             
             ps.setInt(1, acrescimo.getId());
@@ -80,7 +70,7 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
                 return false;
             }
         }catch(SQLException e){
-            throw new DaoException("Problema com o banco de dados, tente novamente");
+            throw new DaoException("Problema com o banco de dados, tente novamente "+e.getMessage());
         }
     }
 
@@ -91,8 +81,9 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
                     
             PreparedStatement ps;
             ResultSet rs;
-            String sql = "SELECT * FROM Acrescimo WHERE ";
+            String sql = "SELECT * FROM Acrescimo WHERE id = ?";
             ps = connection.prepareStatement(sql);
+            ps.setInt(1,id);
             rs = ps.executeQuery();
             if(rs.next()){
                 return populateAcrescimo(rs);

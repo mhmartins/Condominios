@@ -26,8 +26,21 @@
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="Principal">Inicio</a></li>
+                        <c:if test="${tipo_morador=='S'}">
+                          <li><a href="Estoque">Estoque</a></li>
+                        </c:if>
+                        <li><a href="AreasComuns">Áreas Comuns</a></li>
+                        <c:if test="${tipo_morador=='S'}">
+                             <li><a href="Mural">Mural de Comunicação</a></li>
+                             <li><a href="MoradorInicio">Cadastrar Morador</a></li>
+                        </c:if>
                         <li class="active"><a href="ReuniaoInicio">Agendar Reunião</a></li>
-                        <li><a href="CadastrarSolicitacao">Cadastrar Solicitação</a></li>
+                        <c:if test="${tipo_morador=='S'}">
+                            <li><a href="Financeiro">Financeiro</a></li>
+                        </c:if>
+                        
+                        <li><a href="CadastrarSolicitacao">Solicitação</a></li>
+                        
                         <li><a href="Logoff">Logoff</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->

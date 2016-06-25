@@ -1,7 +1,7 @@
 <%-- 
-    Document   : areas-inicio
-    Created on : 21/06/2016, 12:57:51
-    Author     : desenvolvimento
+    Document   : boleto-inicio
+    Created on : 25/06/2016, 00:59:59
+    Author     : Tobias
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Áreas Comuns</title>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <title>JSP Page</title>
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-         <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,23 +25,24 @@
                   <ul class="nav navbar-nav">
                     <li><a href="Principal">Inicio</a></li>
                     <li><a href="Estoque">Estoque</a></li>
-                    <li class="active"><a href="AreasComuns">Áreas Comuns</a></li>
+                    <li><a href="AreasComuns">Áreas Comuns</a></li>
                     <li><a href="Mural">Mural de Comunicação</a></li>
                     <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
                     <li><a href="MoradorInicio">Cadastrar Morador</a></li>
                     <li><a href="VisualizarSolicitacao">Solicitações</a></li>
-                    <li><a href="Financeiro">Financeiro</a></li>
+                    <li class="active"><a href="Financeiro" >Financeiro</a></li>
                     <li><a href="Logoff">Logoff</a></li>
                   </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
         </nav>
-
+        
         <div class="container">
-            <center>
-                <a href="AgendarArea"><button class="btn btn-lg btn-primary">Agendar Área Comum</button></a>
-                <a href="VisualizarAgendamentos"><button class="btn btn-lg btn-primary">Visualizar Agendamentos</button></a>
-            </center>
+            <form action="" method="POST">
+                <input type="submit" value="Gerar Boleto mês atual" class="btn btn-lg btn-primary btn-block width40 center-block"/>
+            </form>
+                
         </div>
+        
     </body>
 </html>

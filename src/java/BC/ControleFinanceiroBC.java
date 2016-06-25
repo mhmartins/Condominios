@@ -5,9 +5,11 @@
  */
 package BC;
 
+import DAO.ControleFinanceiroDAO;
 import Interfaces.IAcrescimoDAO;
 import Interfaces.IControleFinanceiro;
 import Model.Acrescimo;
+import Model.Morador;
 import java.util.List;
 
 /**
@@ -45,8 +47,8 @@ public class ControleFinanceiroBC implements IAcrescimoDAO, IControleFinanceiro 
     }
 
     @Override
-    public boolean gerarBoleto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean gerarBoleto(List<Morador> moradores) {
+        return ControleFinanceiroDAO.getInstance().gerarBoleto(moradores);
     }
     
     
