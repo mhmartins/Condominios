@@ -36,7 +36,6 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
             
             ps.setString(1, acrescimo.getDescricao());
             ps.setDouble(2, acrescimo.getValor());
-            
             if(ps.executeUpdate() == 1){
                 return true;
             }else {
@@ -62,7 +61,7 @@ public class JdbcAcrescimoDAO implements IAcrescimoDAO {
             }
             return acrescimos;
         }catch(SQLException e){
-            throw new DaoException("Problema com o banco de dados, tente novamente");
+            throw new DaoException("Problema com o banco de dados, tente novamente "+e.getMessage());
         }
     }
 

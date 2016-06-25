@@ -88,6 +88,18 @@
         <servlet-name>DeletarSolicitacaoServlet</servlet-name>
         <servlet-class>View.DeletarSolicitacaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FinanceiroServlet</servlet-name>
+        <servlet-class>View.FinanceiroServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastrarAcrescimoServlet</servlet-name>
+        <servlet-class>View.CadastrarAcrescimoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VisualizarAcrescimoServlet</servlet-name>
+        <servlet-class>View.VisualizarAcrescimoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PrincipalServlet</servlet-name>
         <url-pattern>/Principal</url-pattern>
@@ -175,6 +187,18 @@
     <servlet-mapping>
         <servlet-name>DeletarSolicitacaoServlet</servlet-name>
         <url-pattern>/DeletarSolicitacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinanceiroServlet</servlet-name>
+        <url-pattern>/Financeiro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarAcrescimoServlet</servlet-name>
+        <url-pattern>/CadastrarAcrescimo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarAcrescimoServlet</servlet-name>
+        <url-pattern>/VisualizarAcrescimo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
