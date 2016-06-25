@@ -57,7 +57,10 @@ public class PrincipalServlet extends HttpServlet {
             
            
         }else if(FuncionarioBC.getInstance().verificaLogin(funcionario)){
-            rd = request.getRequestDispatcher("jsp/painel-funcionario.jsp"); 
+            
+            request.getSession().setAttribute("funcionario", funcionario);
+            rd = request.getRequestDispatcher("jsp/painel-funcionario.jsp");
+            
         } else {
             rd = request.getRequestDispatcher("jsp/Inicio.jsp"); 
         }

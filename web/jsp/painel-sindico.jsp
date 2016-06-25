@@ -14,7 +14,7 @@
     </head>
     <body>
         
-       <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,12 +25,13 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="Principal">Inicio</a></li>
-            <li><a href="Estoque">Controle de Estoque</a></li>
+            <li><a href="Estoque">Estoque</a></li>
             <li><a href="AreasComuns">Áreas Comuns</a></li>
             <li><a href="Mural">Mural de Comunicação</a></li>
             <li><a href="ReuniaoInicio">Agendar Reunião</a></li>
             <li><a href="MoradorInicio">Cadastrar Morador</a></li>
             <li><a href="VisualizarSolicitacao">Solicitações</a></li>
+            <li><a href="">Movimentação Financeira</a></li>
             <li><a href="Logoff">Logoff</a></li>
           </ul>
         </div>

@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Funcionario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -23,6 +24,10 @@ public class EstoqueServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        if(request.getSession().getAttribute("funcionario") != null){
+            request.setAttribute("funcionario", (Funcionario)request.getSession().getAttribute("funcionario"));
+        }
+        
         RequestDispatcher rd = request.getRequestDispatcher("jsp/estoque-inicio.jsp");
         rd.forward(request, response);
     }
